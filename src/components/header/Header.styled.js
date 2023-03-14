@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Header = styled.header`
+export const HeaderTeg = styled.header`
 border-bottom: 1px solid #333333;
 `
 
@@ -9,9 +9,10 @@ padding-left: 147px;
 padding-right: 147px;
 display:flex;
 justify-content: space-between;
-width: 1146px;
+align-items:center;
 `
 export const Img = styled.img`
+margin-top:19px;
 width: 491px;
 height: 84px;
 `

@@ -1,14 +1,14 @@
 import logo from '../../images/logoTransporent.png';
-import { Day, Img, WraperHeader } from './Header.styled';
+import { Day, HeaderTeg, Img, WraperHeader } from './Header.styled';
 
 const Header = () => {
   return (
-    <Header>
+    <HeaderTeg>
       <WraperHeader>
         <Img src={logo} alt="Page not found" />
         <Day />
       </WraperHeader>
-    </Header>
+    </HeaderTeg>
   );
 };
 
