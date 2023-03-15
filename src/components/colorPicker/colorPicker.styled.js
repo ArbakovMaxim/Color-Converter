@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 
 export const WrapperColorPickerSection = styled.div`
-padding-left: 147px;
-padding-right: 147px;
+/* padding-left: 147px;
+padding-right: 147px; */
 `
 
 export const WrapperColorPicker = styled.div`
