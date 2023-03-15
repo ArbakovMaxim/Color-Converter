@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.js": "/Color-Converter/static/js/main.d78a9bf9.js",
-    "static/js/920.6611c981.chunk.js": "/Color-Converter/static/js/920.6611c981.chunk.js",
-    "static/js/859.1f1a4eb0.chunk.js": "/Color-Converter/static/js/859.1f1a4eb0.chunk.js",
-    "static/js/388.12e8c052.chunk.js": "/Color-Converter/static/js/388.12e8c052.chunk.js",
-    "static/js/600.3bd43ae5.chunk.js": "/Color-Converter/static/js/600.3bd43ae5.chunk.js",
+    "main.js": "/Color-Converter/static/js/main.e7b584e6.js",
+    "static/js/637.0b26accd.chunk.js": "/Color-Converter/static/js/637.0b26accd.chunk.js",
+    "static/js/859.99baa134.chunk.js": "/Color-Converter/static/js/859.99baa134.chunk.js",
+    "static/js/388.05ca47c8.chunk.js": "/Color-Converter/static/js/388.05ca47c8.chunk.js",
+    "static/js/600.3fe1f88c.chunk.js": "/Color-Converter/static/js/600.3fe1f88c.chunk.js",
     "static/js/2.23561235.chunk.js": "/Color-Converter/static/js/2.23561235.chunk.js",
     "static/js/881.8d44ac9c.chunk.js": "/Color-Converter/static/js/881.8d44ac9c.chunk.js",
     "static/media/logoTransporent.png": "/Color-Converter/static/media/logoTransporent.b0e3521d3d015e129f91.png",
     "index.html": "/Color-Converter/index.html",
-    "main.d78a9bf9.js.map": "/Color-Converter/static/js/main.d78a9bf9.js.map",
-    "920.6611c981.chunk.js.map": "/Color-Converter/static/js/920.6611c981.chunk.js.map",
-    "859.1f1a4eb0.chunk.js.map": "/Color-Converter/static/js/859.1f1a4eb0.chunk.js.map",
-    "388.12e8c052.chunk.js.map": "/Color-Converter/static/js/388.12e8c052.chunk.js.map",
-    "600.3bd43ae5.chunk.js.map": "/Color-Converter/static/js/600.3bd43ae5.chunk.js.map",
+    "main.e7b584e6.js.map": "/Color-Converter/static/js/main.e7b584e6.js.map",
+    "637.0b26accd.chunk.js.map": "/Color-Converter/static/js/637.0b26accd.chunk.js.map",
+    "859.99baa134.chunk.js.map": "/Color-Converter/static/js/859.99baa134.chunk.js.map",
+    "388.05ca47c8.chunk.js.map": "/Color-Converter/static/js/388.05ca47c8.chunk.js.map",
+    "600.3fe1f88c.chunk.js.map": "/Color-Converter/static/js/600.3fe1f88c.chunk.js.map",
     "2.23561235.chunk.js.map": "/Color-Converter/static/js/2.23561235.chunk.js.map",
     "881.8d44ac9c.chunk.js.map": "/Color-Converter/static/js/881.8d44ac9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.d78a9bf9.js"
+    "static/js/main.e7b584e6.js"
   ]
 }
