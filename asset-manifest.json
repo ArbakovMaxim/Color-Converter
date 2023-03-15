@@ -1,19 +1,23 @@
 {
   "files": {
-    "main.js": "/Color-Converter/static/js/main.7d5c5162.js",
-    "static/js/713.644df1a2.chunk.js": "/Color-Converter/static/js/713.644df1a2.chunk.js",
-    "static/js/609.743e9a41.chunk.js": "/Color-Converter/static/js/609.743e9a41.chunk.js",
+    "main.js": "/Color-Converter/static/js/main.d78a9bf9.js",
+    "static/js/920.6611c981.chunk.js": "/Color-Converter/static/js/920.6611c981.chunk.js",
+    "static/js/859.1f1a4eb0.chunk.js": "/Color-Converter/static/js/859.1f1a4eb0.chunk.js",
+    "static/js/388.12e8c052.chunk.js": "/Color-Converter/static/js/388.12e8c052.chunk.js",
+    "static/js/600.3bd43ae5.chunk.js": "/Color-Converter/static/js/600.3bd43ae5.chunk.js",
     "static/js/2.23561235.chunk.js": "/Color-Converter/static/js/2.23561235.chunk.js",
     "static/js/881.8d44ac9c.chunk.js": "/Color-Converter/static/js/881.8d44ac9c.chunk.js",
     "static/media/logoTransporent.png": "/Color-Converter/static/media/logoTransporent.b0e3521d3d015e129f91.png",
     "index.html": "/Color-Converter/index.html",
-    "main.7d5c5162.js.map": "/Color-Converter/static/js/main.7d5c5162.js.map",
-    "713.644df1a2.chunk.js.map": "/Color-Converter/static/js/713.644df1a2.chunk.js.map",
-    "609.743e9a41.chunk.js.map": "/Color-Converter/static/js/609.743e9a41.chunk.js.map",
+    "main.d78a9bf9.js.map": "/Color-Converter/static/js/main.d78a9bf9.js.map",
+    "920.6611c981.chunk.js.map": "/Color-Converter/static/js/920.6611c981.chunk.js.map",
+    "859.1f1a4eb0.chunk.js.map": "/Color-Converter/static/js/859.1f1a4eb0.chunk.js.map",
+    "388.12e8c052.chunk.js.map": "/Color-Converter/static/js/388.12e8c052.chunk.js.map",
+    "600.3bd43ae5.chunk.js.map": "/Color-Converter/static/js/600.3bd43ae5.chunk.js.map",
     "2.23561235.chunk.js.map": "/Color-Converter/static/js/2.23561235.chunk.js.map",
     "881.8d44ac9c.chunk.js.map": "/Color-Converter/static/js/881.8d44ac9c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.7d5c5162.js"
+    "static/js/main.d78a9bf9.js"
   ]
 }
