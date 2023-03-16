@@ -9,7 +9,7 @@ padding-left: 147px;
 padding-right: 147px;
 display:flex;
 justify-content: space-between;
-align-items:center;
+
 `
 export const Img = styled.img`
 margin-top:19px;
@@ -18,7 +18,7 @@ height: 84px;
 `
 
 export const Day = styled.div`
-width: 110px;
-height: 35px;
+width: 35px;
+height: 90px;
 background-color: red;
 `

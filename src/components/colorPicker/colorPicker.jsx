@@ -10,6 +10,7 @@ import {
   WrapperColorPickerSection,
   WrapperHue,
 } from './colorPicker.styled';
+import Converter from 'components/Converter/Converter';
 
 const ColorPicker = () => {
   const [hsva, setHsva] = useState({ h: 0, s: 0, v: 68, a: 1 });
@@ -45,6 +46,7 @@ const ColorPicker = () => {
             />
           </WrappeSaturation>
         </WrapperColorPicker>
+        <Converter />
       </WrapperColorPickerSection>
     </Section>
   );
