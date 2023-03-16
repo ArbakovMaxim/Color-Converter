@@ -21,3 +21,10 @@ width: 435px;
 height: 25px;
 padding: 20px 30px 15px 30px;
   `
+
+export const WrraperOnverter = styled.div`
+display: flex;
+`
+
+export const WrraperRightsBtnGroup = styled.div`
+margin-left:53px`

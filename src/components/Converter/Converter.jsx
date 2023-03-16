@@ -1,6 +1,12 @@
 import ListColorMenu from 'components/listColorsMenu/listColorsMenu';
 import { useState } from 'react';
-import { BtnPicker, InputColor, WrraperListColum } from './Converter.styled';
+import {
+  BtnPicker,
+  InputColor,
+  WrraperListColum,
+  WrraperOnverter,
+  WrraperRightsBtnGroup,
+} from './Converter.styled';
 
 const Converter = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -21,37 +27,34 @@ const Converter = () => {
 
   function targetLi(e) {
     if (activMenu === 'flowerSystem') {
-      visibli();
-      return setFlowerSystem(e.target.innerText);
+      setFlowerSystem(e.target.innerText);
     }
     if (activMenu === 'flowerSystemSecond') {
-      visibli();
-      return setFlowerSystemSecond(e.target.innerText);
+      setFlowerSystemSecond(e.target.innerText);
     }
     if (activMenu === 'flowerSystemThird') {
-      visibli();
-      return setFlowerSystemThird(e.target.innerText);
+      setFlowerSystemThird(e.target.innerText);
     }
     if (activMenu === 'flowerSystemFourth') {
-      visibli();
-      return setFlowerSystemFourth(e.target.innerText);
+      setFlowerSystemFourth(e.target.innerText);
     }
+    visibli();
+  }
+
+  function rightsTargetLi(e) {
     if (rightsActivMenu === 'rightsFlowerSystem') {
-      rightsVisibli();
-      return setRightsFlowerSystem(e.target.innerText);
+      setRightsFlowerSystem(e.target.innerText);
     }
     if (rightsActivMenu === 'rightsFlowerSystemSecond') {
-      rightsVisibli();
-      return setRightsFlowerSystemSecond(e.target.innerText);
+      setRightsFlowerSystemSecond(e.target.innerText);
     }
     if (rightsActivMenu === 'rightsFlowerSystemThird') {
-      rightsVisibli();
-      return setRightsFlowerSystemThird(e.target.innerText);
+      setRightsFlowerSystemThird(e.target.innerText);
     }
     if (rightsActivMenu === 'rightsFlowerSystemFourth') {
-      rightsVisibli();
-      return setRightsFlowerSystemFourth(e.target.innerText);
+      setRightsFlowerSystemFourth(e.target.innerText);
     }
+    rightsVisibli();
   }
 
   function visibli() {
@@ -95,7 +98,7 @@ const Converter = () => {
   }
 
   return (
-    <div>
+    <WrraperOnverter>
       <div>
         <BtnPicker id="flowerSystem" onClick={activ}>
           {flowerSystem}
@@ -116,7 +119,7 @@ const Converter = () => {
         ) : null}
         <InputColor />
       </div>
-      <div>
+      <WrraperRightsBtnGroup>
         <BtnPicker id="rightsFlowerSystem" onClick={rightsActiv}>
           {rightsFlowerSystem}
         </BtnPicker>
@@ -131,12 +134,12 @@ const Converter = () => {
         </BtnPicker>
         {isVisibleRights ? (
           <WrraperListColum>
-            <ListColorMenu target={targetLi} />
+            <ListColorMenu target={rightsTargetLi} />
           </WrraperListColum>
         ) : null}
         <InputColor />
-      </div>
-    </div>
+      </WrraperRightsBtnGroup>
+    </WrraperOnverter>
   );
 };
 
