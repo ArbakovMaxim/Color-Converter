@@ -193,7 +193,7 @@ const ConverterColor = () => {
               <ListColorMenu target={rightsTargetLi} />
             </WrraperListColum>
           ) : null}
-          <InputColor type="text" name="input2" defaultValue={inputTwo} />
+          <InputColor type="text" name="input2" readonly value={inputTwo} />
         </WrraperInput>
       </WrraperRightsBtnGroup>
     </WrraperOnverter>

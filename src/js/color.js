@@ -154,6 +154,42 @@ export class Color {
         return Converter.RGBToCMY(rgb['red'], rgb['green'], rgb['blue']);
     }
 
+    setHLSA(hue, lightness, saturation, alpha) {
+        const rgba = Converter.HLSAToRGBA(hue, lightness, saturation, alpha);
+
+        return this.setRGBA(rgba['red'], rgba['green'], rgba['blue'], rgba['alpha']);
+    }
+
+    getHLSA() {
+        const rgb = this.getRGBA();
+
+        return Converter.RGBAToHLSA(rgb['red'], rgb['green'], rgb['blue']);
+    }
+
+    setHLS(hue, lightness, saturation) {
+        const rgb = Converter.HLSToRGB(hue, lightness, saturation);
+
+        return this.setRGB(rgb['red'], rgb['green'], rgb['blue']);
+    }
+
+    getHLS() {
+        const rgb = this.getRGB();
+
+        return Converter.RGBToHLS(rgb['red'], rgb['green'], rgb['blue']);
+    }
+
+    setHSB(hue, saturation, brightness) {
+        const rgb = Converter.HSBToRGB(hue, saturation, brightness);
+
+        return this.setRGB(rgb['red'], rgb['green'], rgb['blue']);
+    }
+
+    getHSB() {
+        const rgb = this.getRGB();
+
+        return Converter.RGBToHSB(rgb['red'], rgb['green'], rgb['blue']);
+    }
+
     setName(name) {
         const rgb = Converter.NameToRGB(name);
 

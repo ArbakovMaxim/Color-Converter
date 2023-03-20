@@ -1,4 +1,5 @@
 import { Color } from "js/color";
+import { getColor } from "./getColor";
 
 export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
     const color = new Color();
@@ -13,73 +14,7 @@ export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
         } else {
             return result
         }
-        switch (rightsFlowerSystem) {
-            case 'RGB':
-                result = color.getRGB()
-                break;
-            case 'RGBA':
-                result = color.getRGBA()
-                break;
-            case 'HEX':
-                result = color.getHEX()
-                break;
-            case 'CMYK':
-                result = color.getCMYK()
-                break;
-            case 'Name':
-                result = color.getName()
-                break;
-            case 'HSL':
-                result = color.getHSL()
-                break;
-            case 'HSLA':
-                result = color.getHSLA()
-                break;
-            case 'HSIA':
-                result = color.getHSIA()
-                break;
-            case 'HLSA':
-                result = color.getHLSA()
-                break;
-            case 'HSI':
-                result = color.getHSI()
-                break;
-            case 'HLS':
-                result = color.getHLS()  ////////////////проверить
-                break;
-            case 'HSV':
-                result = color.getHSV()
-                break;
-            case 'HSB':
-                result = color.getHSB() ////////////////проверить
-                break;
-            case 'Safe':
-                result = color.getSafe()
-                break;
-            case 'CMY':
-                result = color.getCMY()
-                break;
-            case 'XYZ':
-                result = color.getXYZ()
-                break;
-            case 'Yxy':
-                result = color.getYxy()
-                break;
-            case 'Lab':
-                result = color.getLab()
-                break;
-            case 'LCH':
-                result = color.getLCH()
-                break;
-            case 'HunterLab':
-                result = color.getHunterLab()
-                break;
-            case 'Luv':
-                result = color.getLuv()
-                break;
-            default:
-                result = '';
-        }
+        result = getColor(color, rightsFlowerSystem)
         return result
     }
     if (flowerSystem === 'RGBA') {
@@ -92,76 +27,7 @@ export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
         } else {
             return result
         }
-        if (colorEl[3]) {
-            color.setAlpha(colorEl[3])
-        }
-        switch (rightsFlowerSystem) {
-            case 'RGB':
-                result = color.getRGB()
-                break;
-            case 'RGBA':
-                result = color.getRGBA()
-                break;
-            case 'HEX':
-                result = color.getHEX()
-                break;
-            case 'CMYK':
-                result = color.getCMYK()
-                break;
-            case 'Name':
-                result = color.getName()
-                break;
-            case 'HSL':
-                result = color.getHSL()
-                break;
-            case 'HSLA':
-                result = color.getHSLA()
-                break;
-            case 'HSIA':
-                result = color.getHSIA()
-                break;
-            case 'HLSA':
-                result = color.getHLSA()
-                break;
-            case 'HSI':
-                result = color.getHSI()
-                break;
-            case 'HLS':
-                result = color.getHLS()  ////////////////проверить
-                break;
-            case 'HSV':
-                result = color.getHSV()
-                break;
-            case 'HSB':
-                result = color.getHSB() ////////////////проверить
-                break;
-            case 'Safe':
-                result = color.getSafe()
-                break;
-            case 'CMY':
-                result = color.getCMY()
-                break;
-            case 'XYZ':
-                result = color.getXYZ()
-                break;
-            case 'Yxy':
-                result = color.getYxy()
-                break;
-            case 'Lab':
-                result = color.getLab()
-                break;
-            case 'LCH':
-                result = color.getLCH()
-                break;
-            case 'HunterLab':
-                result = color.getHunterLab()
-                break;
-            case 'Luv':
-                result = color.getLuv()
-                break;
-            default:
-                result = '';
-        }
+        result = getColor(color, rightsFlowerSystem)
         return result
     }
     if (flowerSystem === 'HEX') {
@@ -170,143 +36,236 @@ export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
         } catch (error) {
             return result
         }
-        switch (rightsFlowerSystem) {
-            case 'RGB':
-                result = color.getRGB()
-                break;
-            case 'RGBA':
-                result = color.getRGBA()
-                break;
-            case 'HEX':
-                result = color.getHEX()
-                break;
-            case 'CMYK':
-                result = color.getCMYK()
-                break;
-            case 'Name':
-                result = color.getName()
-                break;
-            case 'HSL':
-                result = color.getHSL()
-                break;
-            case 'HSLA':
-                result = color.getHSLA()
-                break;
-            case 'HSIA':
-                result = color.getHSIA()
-                break;
-            case 'HLSA':
-                result = color.getHLSA()
-                break;
-            case 'HSI':
-                result = color.getHSI()
-                break;
-            case 'HLS':
-                result = color.getHLS()  ////////////////проверить
-                break;
-            case 'HSV':
-                result = color.getHSV()
-                break;
-            case 'HSB':
-                result = color.getHSB() ////////////////проверить
-                break;
-            case 'Safe':
-                result = color.getSafe()
-                break;
-            case 'CMY':
-                result = color.getCMY()
-                break;
-            case 'XYZ':
-                result = color.getXYZ()
-                break;
-            case 'Yxy':
-                result = color.getYxy()
-                break;
-            case 'Lab':
-                result = color.getLab()
-                break;
-            case 'LCH':
-                result = color.getLCH()
-                break;
-            case 'HunterLab':
-                result = color.getHunterLab()
-                break;
-            case 'Luv':
-                result = color.getLuv()
-                break;
-            default:
-                result = '';
-        }
+        result = getColor(color, rightsFlowerSystem)
         return result
     }
     if (flowerSystem === 'CMYK') {
-        switch (rightsFlowerSystem) {
-            case 'RGB':
-                result = color.getRGB()
-                break;
-            case 'RGBA':
-                result = color.getRGBA()
-                break;
-            case 'HEX':
-                result = color.getHEX()
-                break;
-            case 'CMYK':
-                result = color.getCMYK()
-                break;
-            case 'Name':
-                result = color.getName()
-                break;
-            case 'HSL':
-                result = color.getHSL()
-                break;
-            case 'HSLA':
-                result = color.getHSLA()
-                break;
-            case 'HSIA':
-                result = color.getHSIA()
-                break;
-            case 'HLSA':
-                result = color.getHLSA()
-                break;
-            case 'HSI':
-                result = color.getHSI()
-                break;
-            case 'HLS':
-                result = color.getHLS()  ////////////////проверить
-                break;
-            case 'HSV':
-                result = color.getHSV()
-                break;
-            case 'HSB':
-                result = color.getHSB() ////////////////проверить
-                break;
-            case 'Safe':
-                result = color.getSafe()
-                break;
-            case 'CMY':
-                result = color.getCMY()
-                break;
-            case 'XYZ':
-                result = color.getXYZ()
-                break;
-            case 'Yxy':
-                result = color.getYxy()
-                break;
-            case 'Lab':
-                result = color.getLab()
-                break;
-            case 'LCH':
-                result = color.getLCH()
-                break;
-            case 'HunterLab':
-                result = color.getHunterLab()
-                break;
-            case 'Luv':
-                result = color.getLuv()
-                break;
-            default:
-                result = '';
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2] && colorEl[3]) {
+            color.setCMYK(colorEl[0],
+                colorEl[1],
+                colorEl[2],
+                colorEl[3])
+        } else {
+            return result
         }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'Name') {
+        try {
+            color.setName(inputOne.trim())
+        } catch (error) {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSL') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHSL(colorEl[0],
+                colorEl[1],
+                colorEl[2])
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSLA') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2] && colorEl[3]) {
+            color.setHSLA(colorEl[0],
+                colorEl[1],
+                colorEl[2],
+                colorEl[3])
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSIA') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2] && colorEl[3]) {
+            color.setHSIA(colorEl[0],
+                colorEl[1],
+                colorEl[2],
+                colorEl[3])
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HLSA') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2] && colorEl[3]) {
+            color.setHLSA(colorEl[0],
+                colorEl[1],
+                colorEl[2],
+                colorEl[3])
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSI') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHSI(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSI') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHSI(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HLS') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHLS(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HLS') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHLS(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSV') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHSV(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HSB') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHSB(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'Safe') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setRGB(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'CMY') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setCMY(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'XYZ') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setXYZ(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'Yxy') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setYxy(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'Lab') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setLab(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'HunterLab') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setHunterLab(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'Luv') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setLuv(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
         return result
     }
 }
