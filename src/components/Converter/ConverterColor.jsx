@@ -1,6 +1,5 @@
 import ListColorMenu from 'components/listColorsMenu/listColorsMenu';
 import { useState, useEffect } from 'react';
-import Converter from '../../js/converter';
 import {
   BtnPicker,
   InputColor,
@@ -9,6 +8,7 @@ import {
   WrraperOnverter,
   WrraperRightsBtnGroup,
 } from './ConverterColor.styled';
+import { firstColumnConvert } from 'util/firstColumnConvert';
 
 const ConverterColor = () => {
   const [inputOne, setInputOne] = useState('');
@@ -44,76 +44,19 @@ const ConverterColor = () => {
   // let rightsActivPallete = '';
   useEffect(() => {
     if (inputOne !== '' && activMenu === 'flowerSystem') {
-      if (flowerSystem === 'RGB' && rightsFlowerSystem === 'RGB') {
-        try {
-          setInputTwo(inputOne);
-        } catch (error) {
-          setInputTwo('');
-        }
-        return;
+      const colorConverter = firstColumnConvert(
+        flowerSystem,
+        rightsFlowerSystem,
+        inputOne
+      );
+      if (rightsFlowerSystem === 'HEX' || rightsFlowerSystem === 'Name') {
+        return setInputTwo(colorConverter);
       }
-      if (flowerSystem === 'RGB' && rightsFlowerSystem === 'RGBA') {
-        try {
-          const colorEl = inputOne.split(',');
-          const convertedColor = Converter.RGBToRGBA(
-            colorEl[0],
-            colorEl[1],
-            colorEl[2]
-          );
-          setInputTwo(
-            Object.values({ convertedColor }).map(i => Object.values(i))
-          );
-        } catch (error) {
-          setInputTwo('');
-        }
-        return;
-      }
-      if (flowerSystem === 'RGB' && rightsFlowerSystem === 'HEX') {
-        try {
-          const colorEl = inputOne.split(',');
-          const convertedColor = Converter.RGBToHEX(
-            Number(colorEl[0]),
-            Number(colorEl[1]),
-            Number(colorEl[2])
-          );
-          setInputTwo(convertedColor);
-        } catch (error) {
-          setInputTwo('');
-        }
-        return;
-      }
-      if (flowerSystem === 'RGB' && rightsFlowerSystem === 'CMYK') {
-        try {
-          const colorEl = inputOne.split(',');
-          const convertedColor = Converter.RGBToCMYK(
-            colorEl[0],
-            colorEl[1],
-            colorEl[2]
-          );
-          setInputTwo(
-            Object.values({ convertedColor }).map(i => Object.values(i))
-          );
-        } catch (error) {
-          setInputTwo('');
-        }
-        return;
-      }
-      if (flowerSystem === 'RGB' && rightsFlowerSystem === 'Name') {
-        try {
-          const colorEl = inputOne.split(',');
-          const convertedColor = Converter.RGBToName(
-            Number(colorEl[0]),
-            Number(colorEl[1]),
-            Number(colorEl[2])
-          );
-          setInputTwo(convertedColor);
-        } catch (error) {
-          setInputTwo('');
-        }
-        return;
-      }
+      const result = Object.values({ colorConverter }).map(i =>
+        Object.values(i)
+      );
+      return setInputTwo(result);
     }
-    setInputTwo('');
     console.log('что то не так');
   }, [inputOne, activMenu, flowerSystem, rightsFlowerSystem]);
 
