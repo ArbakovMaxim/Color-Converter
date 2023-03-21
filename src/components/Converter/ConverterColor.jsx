@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import ListColorMenu from 'components/listColorsMenu/listColorsMenu';
 import { useState, useEffect } from 'react';
 import {
