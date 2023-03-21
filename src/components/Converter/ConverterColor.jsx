@@ -8,19 +8,30 @@ import {
   WrraperOnverter,
   WrraperRightsBtnGroup,
 } from './ConverterColor.styled';
-import { firstColumnConvert } from 'util/firstColumnConvert';
+import { columnConvert } from 'util/ColumnConvert';
+import { nameActivMenu } from 'util/ActivElement/nameActivMenu';
+import { activColorInputValue } from 'util/ActivElement/activColorInputValue';
+import { activFlowerSystemt } from 'util/ActivElement/activFlowerSystemt';
 
-const ConverterColor = () => {
-  const [inputOne, setInputOne] = useState('');
-  const [inputTwo, setInputTwo] = useState('');
+const ConverterColor = ({ color }) => {
+  //////input set
+  const [colorInput, setColorInput] = useState('');
+  const [colorInputSecond, setColorInputSecond] = useState('');
+  const [colorInputThird, setColorInputThird] = useState('');
+  const [colorInputFourth, setColorInputFourth] = useState('');
+  const [rightsInput, setrRightsInput] = useState('');
+
+  ///////activ set
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleRights, setIsVisibleRights] = useState(false);
   const [activMenu, setActivMenu] = useState('flowerSystem');
+  const [rightsActivMenu, setRightsActivMenu] = useState('rightsFlowerSystem');
+
+  //////color menu set
   const [flowerSystem, setFlowerSystem] = useState('RGB');
   const [flowerSystemSecond, setFlowerSystemSecond] = useState('HLS');
   const [flowerSystemThird, setFlowerSystemThird] = useState('CMYK');
   const [flowerSystemFourth, setFlowerSystemFourth] = useState('HSL');
-  const [rightsActivMenu, setRightsActivMenu] = useState('rightsFlowerSystem');
   const [rightsFlowerSystem, setRightsFlowerSystem] = useState('RGB');
   const [rightsFlowerSystemSecond, setRightsFlowerSystemSecond] =
     useState('HLS');
@@ -29,49 +40,49 @@ const ConverterColor = () => {
   const [rightsFlowerSystemFourth, setRightsFlowerSystemFourth] =
     useState('HSL');
 
-  // const activList = [
-  //   { activBtn: 'flowerSystem', activ: flowerSystem },
-  //   { activBtn: 'flowerSystemSecond', activ: flowerSystemSecond },
-  //   { activBtn: 'flowerSystemThird', activ: flowerSystemThird },
-  //   { activBtn: 'flowerSystemFourth', activ: flowerSystemFourth },
-  //   { activBtn: 'rightsFlowerSystem', activ: rightsFlowerSystem },
-  //   { activBtn: 'rightsFlowerSystemSecond', activ: rightsFlowerSystemSecond },
-  //   { activBtn: 'rightsFlowerSystemThird', activ: rightsFlowerSystemThird },
-  //   { activBtn: 'rightsFlowerSystemFourth', activ: rightsFlowerSystemFourth },
-  // ];
+  const activInputRights = nameActivMenu(
+    rightsActivMenu,
+    rightsFlowerSystem,
+    rightsFlowerSystemSecond,
+    rightsFlowerSystemThird,
+    rightsFlowerSystemFourth
+  );
 
-  // let activPallete = '';
-  // let rightsActivPallete = '';
+  const colorInputValue = activColorInputValue(
+    colorInput,
+    colorInputSecond,
+    colorInputThird,
+    colorInputFourth,
+    activMenu
+  );
+
+  const activFlower = activFlowerSystemt(
+    activMenu,
+    flowerSystem,
+    flowerSystemSecond,
+    flowerSystemThird,
+    flowerSystemFourth
+  );
+
   useEffect(() => {
-    if (inputOne !== '' && activMenu === 'flowerSystem') {
-      const colorConverter = firstColumnConvert(
-        flowerSystem,
-        rightsFlowerSystem,
-        inputOne
+    if (colorInputValue !== '') {
+      const colorConverter = columnConvert(
+        activFlower,
+        activInputRights,
+        colorInputValue,
+        color
       );
-      if (rightsFlowerSystem === 'HEX' || rightsFlowerSystem === 'Name') {
-        return setInputTwo(colorConverter);
+      if (activInputRights === 'HEX' || activInputRights === 'Name') {
+        setrRightsInput(colorConverter);
+        return;
       }
       const result = Object.values({ colorConverter }).map(i =>
         Object.values(i)
       );
-      return setInputTwo(result);
+      setrRightsInput(result);
     }
     console.log('что то не так');
-  }, [inputOne, activMenu, flowerSystem, rightsFlowerSystem]);
-
-  // function convert() {
-  //   activList.map(activ => {
-  //     if (activ.activBtn === activMenu) {
-  //       activPallete = activ.activ;
-  //     }
-  //     if (activ.activBtn === rightsActivMenu) {
-  //       rightsActivPallete = activ.activ;
-  //     }
-  //     return [activPallete, rightsActivPallete];
-  //   });
-  // }
-  // convert();
+  }, [activMenu, activFlower, activInputRights, colorInputValue]);
 
   function targetLi(e) {
     if (activMenu === 'flowerSystem') {
@@ -166,12 +177,38 @@ const ConverterColor = () => {
               <ListColorMenu target={targetLi} />
             </WrraperListColum>
           ) : null}
-          <InputColor
-            type="text"
-            name="input1"
-            value={inputOne}
-            onChange={event => setInputOne(event.target.value)}
-          />
+          {activMenu === 'flowerSystem' ? (
+            <InputColor
+              type="text"
+              name="ColorInput"
+              value={colorInput}
+              onChange={event => setColorInput(event.target.value)}
+            />
+          ) : null}
+          {activMenu === 'flowerSystemSecond' ? (
+            <InputColor
+              type="text"
+              name="ColorInputSecond"
+              value={colorInputSecond}
+              onChange={event => setColorInputSecond(event.target.value)}
+            />
+          ) : null}
+          {activMenu === 'flowerSystemThird' ? (
+            <InputColor
+              type="text"
+              name="ColorInputThird"
+              value={colorInputThird}
+              onChange={event => setColorInputThird(event.target.value)}
+            />
+          ) : null}
+          {activMenu === 'flowerSystemFourth' ? (
+            <InputColor
+              type="text"
+              name="colorInputFourth"
+              value={colorInputFourth}
+              onChange={event => setColorInputFourth(event.target.value)}
+            />
+          ) : null}
         </WrraperInput>
       </div>
       <WrraperRightsBtnGroup>
@@ -193,7 +230,12 @@ const ConverterColor = () => {
               <ListColorMenu target={rightsTargetLi} />
             </WrraperListColum>
           ) : null}
-          <InputColor type="text" name="input2" readonly value={inputTwo} />
+          <InputColor
+            type="text"
+            name="rightsInput"
+            readOnly
+            value={rightsInput}
+          />
         </WrraperInput>
       </WrraperRightsBtnGroup>
     </WrraperOnverter>

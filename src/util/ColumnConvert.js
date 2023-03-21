@@ -1,8 +1,8 @@
-import { Color } from "js/color";
+// import Color from "js/color";
 import { getColor } from "./getColor";
 
-export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
-    const color = new Color();
+export function columnConvert(flowerSystem, rightsFlowerSystem, inputOne, color) {
+    // const color = new Color();
     let result = {}
 
     if (flowerSystem === 'RGB') {
@@ -266,6 +266,7 @@ export function firstColumnConvert(flowerSystem, rightsFlowerSystem, inputOne) {
             return result
         }
         result = getColor(color, rightsFlowerSystem)
+
         return result
     }
 }

@@ -1,5 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
-import { hsvaToHex } from '@uiw/color-convert';
 import Hue from '@uiw/react-color-hue';
 import Saturation from '@uiw/react-color-saturation';
 import { Section } from 'components/ui/Section/Section';
@@ -11,20 +11,43 @@ import {
   WrapperHue,
 } from './colorPicker.styled';
 import ConverterColor from 'components/Converter/ConverterColor';
+import Color from 'js/color';
 
 const ColorPicker = () => {
-  const [hsva, setHsva] = useState({ h: 0, s: 0, v: 68, a: 1 });
-  const [hexa, sethexa] = useState('#adadad');
+  const [hsva, setHsva] = useState({ h: 0, s: 0, v: 0, a: 1 });
+  const [bgRGB, setBgRGB] = useState('');
+  const color = new Color();
+
+  // const bgOb = color.getRGB();
+  // console.log(bgOb);
+
+  // function setColor() {
+  //   const bgString = `rgb(${bgOb.red}, ${bgOb.green}, ${bgOb.blue})`;
+  //   setBgRGB(bgString);
+  // }
+
+  function colorClass() {
+    color.setHSV(hsva.h, hsva.s / 100, hsva.v / 100);
+    const result = color.getRGB();
+    color.setBgRGB(result.red, result.green, result.blue);
+    const bgOb = color.getBgRGB();
+    const bgString = `rgb(${bgOb.red}, ${bgOb.green}, ${bgOb.blue})`;
+    setBgRGB(bgString);
+  }
+
+  // useEffect(() => {
+  //   setColor();
+  // }, [bgOb]);
 
   useEffect(() => {
-    sethexa(hsvaToHex(hsva));
+    colorClass();
   }, [hsva]);
 
   return (
     <Section>
       <WrapperColorPickerSection>
         <WrapperColorPicker>
-          <ColorDisplay style={{ backgroundColor: hexa }} />
+          <ColorDisplay style={{ backgroundColor: bgRGB }} />
           <WrapperHue>
             <Hue
               hue={hsva.h}
@@ -46,7 +69,7 @@ const ColorPicker = () => {
             />
           </WrappeSaturation>
         </WrapperColorPicker>
-        <ConverterColor />
+        <ConverterColor color={color} />
       </WrapperColorPickerSection>
     </Section>
   );

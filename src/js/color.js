@@ -1,6 +1,6 @@
 import Converter from './converter.js'
 
-export class Color {
+export default class Color {
     constructor() {
         this.red = 255;
         this.green = 255;
