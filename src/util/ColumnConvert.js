@@ -1,8 +1,7 @@
-// import Color from "js/color";
+
 import { getColor } from "./getColor";
 
 export function columnConvert(flowerSystem, rightsFlowerSystem, inputOne, color) {
-    // const color = new Color();
     let result = {}
 
     if (flowerSystem === 'RGB') {
@@ -224,6 +223,18 @@ export function columnConvert(flowerSystem, rightsFlowerSystem, inputOne, color)
         const colorEl = inputOne.split(',');
         if (colorEl[0] && colorEl[1] && colorEl[2]) {
             color.setYxy(colorEl[0],
+                colorEl[1],
+                colorEl[2],)
+        } else {
+            return result
+        }
+        result = getColor(color, rightsFlowerSystem)
+        return result
+    }
+    if (flowerSystem === 'LCH') {
+        const colorEl = inputOne.split(',');
+        if (colorEl[0] && colorEl[1] && colorEl[2]) {
+            color.setLCH(colorEl[0],
                 colorEl[1],
                 colorEl[2],)
         } else {

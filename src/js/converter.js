@@ -70,6 +70,9 @@ export default class Converter {
     //  */
 
     static RGBToHEX(red, green, blue) {
+        red = Number(red);
+        green = Number(green);
+        blue = Number(blue);
         return ((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1);
     }
 
@@ -794,8 +797,8 @@ export default class Converter {
         const C = (Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)))).toFixed(4);
         H = Math.floor(H % 360);
         const lch = {};
-        lch.L = L;
-        lch.C = C;
+        lch.L = Number(L);
+        lch.C = Number(C);
         lch.H = H;
 
         return lch;

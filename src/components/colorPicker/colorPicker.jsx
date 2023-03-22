@@ -14,17 +14,9 @@ import ConverterColor from 'components/Converter/ConverterColor';
 import Color from 'js/color';
 
 const ColorPicker = () => {
-  const [hsva, setHsva] = useState({ h: 0, s: 0, v: 0, a: 1 });
+  const [hsva, setHsva] = useState({ h: 25, s: 25, v: 25, a: 1 });
   const [bgRGB, setBgRGB] = useState('');
   const color = new Color();
-
-  // const bgOb = color.getRGB();
-  // console.log(bgOb);
-
-  // function setColor() {
-  //   const bgString = `rgb(${bgOb.red}, ${bgOb.green}, ${bgOb.blue})`;
-  //   setBgRGB(bgString);
-  // }
 
   function colorClass() {
     color.setHSV(hsva.h, hsva.s / 100, hsva.v / 100);
@@ -34,10 +26,10 @@ const ColorPicker = () => {
     const bgString = `rgb(${bgOb.red}, ${bgOb.green}, ${bgOb.blue})`;
     setBgRGB(bgString);
   }
-
-  // useEffect(() => {
-  //   setColor();
-  // }, [bgOb]);
+  function bgColorInInput(bgColor) {
+    const bgString = `rgb(${bgColor.red}, ${bgColor.green}, ${bgColor.blue})`;
+    setBgRGB(bgString);
+  }
 
   useEffect(() => {
     colorClass();
@@ -69,7 +61,11 @@ const ColorPicker = () => {
             />
           </WrappeSaturation>
         </WrapperColorPicker>
-        <ConverterColor color={color} />
+        <ConverterColor
+          color={color}
+          bgColor={bgColorInInput}
+          saturation={hsva}
+        />
       </WrapperColorPickerSection>
     </Section>
   );

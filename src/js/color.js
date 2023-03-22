@@ -163,7 +163,7 @@ export default class Color {
     getHLSA() {
         const rgb = this.getRGBA();
 
-        return Converter.RGBAToHLSA(rgb['red'], rgb['green'], rgb['blue']);
+        return Converter.RGBAToHLSA(rgb['red'], rgb['green'], rgb['blue'], rgb['alpha']);
     }
 
     setHLS(hue, lightness, saturation) {

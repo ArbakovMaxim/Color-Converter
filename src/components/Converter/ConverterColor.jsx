@@ -2,6 +2,7 @@
 import ListColorMenu from 'components/listColorsMenu/listColorsMenu';
 import { useState, useEffect } from 'react';
 import {
+  Btn,
   BtnPicker,
   InputColor,
   WrraperInput,
@@ -13,14 +14,16 @@ import { columnConvert } from 'util/ColumnConvert';
 import { nameActivMenu } from 'util/ActivElement/nameActivMenu';
 import { activColorInputValue } from 'util/ActivElement/activColorInputValue';
 import { activFlowerSystemt } from 'util/ActivElement/activFlowerSystemt';
+import { saturationToInput } from 'util/saturationToInput';
+import { activColorInput } from 'util/ActivElement/activColorInput';
 
-const ConverterColor = ({ color }) => {
+const ConverterColor = ({ color, bgColor, saturation }) => {
   //////input set
   const [colorInput, setColorInput] = useState('');
   const [colorInputSecond, setColorInputSecond] = useState('');
   const [colorInputThird, setColorInputThird] = useState('');
   const [colorInputFourth, setColorInputFourth] = useState('');
-  const [rightsInput, setrRightsInput] = useState('');
+  const [rightsInput, setRightsInput] = useState('');
 
   ///////activ set
   const [isVisible, setIsVisible] = useState(false);
@@ -40,6 +43,14 @@ const ConverterColor = ({ color }) => {
     useState('CMYK');
   const [rightsFlowerSystemFourth, setRightsFlowerSystemFourth] =
     useState('HSL');
+
+  const activSetInput = activColorInput(
+    activMenu,
+    setColorInput,
+    setColorInputSecond,
+    setColorInputThird,
+    setColorInputFourth
+  );
 
   const activInputRights = nameActivMenu(
     rightsActivMenu,
@@ -66,6 +77,24 @@ const ConverterColor = ({ color }) => {
   );
 
   useEffect(() => {
+    const colorConverter = saturationToInput(color, saturation, activFlower);
+    if (activFlower === 'HEX' || activFlower === 'Name') {
+      activSetInput(colorConverter);
+      return;
+    }
+    const result = Object.values({ colorConverter }).map(i =>
+      Object.values(i)
+    )[0];
+    if (result[0] && result[1] && result[2] && result[3]) {
+      activSetInput(`${result[0]}, ${result[1]}, ${result[2]}, ${result[3]}`);
+      return;
+    }
+    if (result[0] && result[1] && result[2]) {
+      activSetInput(`${result[0]}, ${result[1]}, ${result[2]}`);
+    }
+  }, [saturation.s, saturation.h, saturation.v]);
+
+  useEffect(() => {
     if (colorInputValue !== '') {
       const colorConverter = columnConvert(
         activFlower,
@@ -73,16 +102,18 @@ const ConverterColor = ({ color }) => {
         colorInputValue,
         color
       );
+
+      const bg = color.getRGB();
+      bgColor(bg);
       if (activInputRights === 'HEX' || activInputRights === 'Name') {
-        setrRightsInput(colorConverter);
+        setRightsInput(colorConverter);
         return;
       }
       const result = Object.values({ colorConverter }).map(i =>
         Object.values(i)
       );
-      setrRightsInput(result);
+      setRightsInput(result);
     }
-    console.log('что то не так');
   }, [activMenu, activFlower, activInputRights, colorInputValue]);
 
   function targetLi(e) {
@@ -126,7 +157,7 @@ const ConverterColor = ({ color }) => {
   }
 
   function activ(event) {
-    visibli();
+    // visibli();
     if (event.currentTarget.id === 'flowerSystem') {
       return setActivMenu('flowerSystem');
     }
@@ -142,7 +173,7 @@ const ConverterColor = ({ color }) => {
   }
 
   function rightsActiv(event) {
-    rightsVisibli();
+    // rightsVisibli();
     if (event.currentTarget.id === 'rightsFlowerSystem') {
       return setRightsActivMenu('rightsFlowerSystem');
     }
@@ -155,6 +186,15 @@ const ConverterColor = ({ color }) => {
     if (event.currentTarget.id === 'rightsFlowerSystemFourth') {
       return setRightsActivMenu('rightsFlowerSystemFourth');
     }
+  }
+
+  function activListColum() {
+    visibli();
+    activSetInput('');
+  }
+
+  function rightsActivListColum() {
+    rightsVisibli();
   }
 
   return (
@@ -172,6 +212,7 @@ const ConverterColor = ({ color }) => {
         <BtnPicker id="flowerSystemFourth" onClick={activ}>
           {flowerSystemFourth}
         </BtnPicker>
+        <Btn onClick={activListColum}>p</Btn>
         <WrraperInput>
           {isVisible ? (
             <WrraperListColum>
@@ -225,6 +266,7 @@ const ConverterColor = ({ color }) => {
         <BtnPicker id="rightsFlowerSystemFourth" onClick={rightsActiv}>
           {rightsFlowerSystemFourth}
         </BtnPicker>
+        <Btn onClick={rightsActivListColum}>p</Btn>
         <WrraperInput>
           {isVisibleRights ? (
             <WrraperListColum>

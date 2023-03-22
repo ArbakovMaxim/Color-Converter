@@ -17,6 +17,14 @@ border-top-right-radius:10px;
     margin-left:10px;
   }`
 
+export const Btn = styled.button`
+width: 25px;
+height: 40px;
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+margin-left:10px;
+`
+
 export const InputColor = styled.input`
 display:block;
 width: 435px;
