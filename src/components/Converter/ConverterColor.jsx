@@ -10,12 +10,21 @@ import {
   WrraperOnverter,
   WrraperRightsBtnGroup,
 } from './ConverterColor.styled';
+import { ColorsInputPicker } from '../colorsInputPicker/colorsInputPicker';
 import { columnConvert } from 'util/ColumnConvert';
 import { nameActivMenu } from 'util/ActivElement/nameActivMenu';
 import { activColorInputValue } from 'util/ActivElement/activColorInputValue';
 import { activFlowerSystemt } from 'util/ActivElement/activFlowerSystemt';
 import { saturationToInput } from 'util/saturationToInput';
 import { activColorInput } from 'util/ActivElement/activColorInput';
+import { activInputs } from 'util/ActivElement/actinInput';
+import { activInputsSecond } from 'util/ActivElement/activInputSecond';
+import { activInputsThird } from 'util/ActivElement/activInputThird';
+import { activInputsFourth } from 'util/ActivElement/activInputFourth';
+import { activSetInputs } from 'util/ActivElement/activSetInputs';
+import { activSetInputsSecond } from 'util/ActivElement/activSetInputsSecond';
+import { activSetInputsThird } from 'util/ActivElement/activSetInputsThird';
+import { activSetInputsFourth } from 'util/ActivElement/activSetInputsFourth';
 
 const ConverterColor = ({ color, bgColor, saturation }) => {
   //////input set
@@ -24,6 +33,27 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   const [colorInputThird, setColorInputThird] = useState('');
   const [colorInputFourth, setColorInputFourth] = useState('');
   const [rightsInput, setRightsInput] = useState('');
+
+  //////////////input in state
+  const [input, setInput] = useState('');
+  const [inputSecond, setInputSecond] = useState('');
+  const [inputThird, setInputThird] = useState('');
+  const [inputFourth, setInputFourth] = useState('');
+  //2
+  const [input2, setInput2] = useState('');
+  const [inputSecond2, setInputSecond2] = useState('');
+  const [inputThird2, setInputThird2] = useState('');
+  const [inputFourth2, setInputFourth2] = useState('');
+  //3
+  const [input3, setInput3] = useState('');
+  const [inputSecond3, setInputSecond3] = useState('');
+  const [inputThird3, setInputThird3] = useState('');
+  const [inputFourth3, setInputFourth3] = useState('');
+  //4
+  const [input4, setInput4] = useState('');
+  const [inputSecond4, setInputSecond4] = useState('');
+  const [inputThird4, setInputThird4] = useState('');
+  const [inputFourth4, setInputFourth4] = useState('');
 
   ///////activ set
   const [isVisible, setIsVisible] = useState(false);
@@ -74,6 +104,63 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
     flowerSystemSecond,
     flowerSystemThird,
     flowerSystemFourth
+  );
+
+  const activInput = activInputs(activMenu, input, input2, input3, input4);
+  const activInputSecond = activInputsSecond(
+    activMenu,
+    inputSecond,
+    inputSecond2,
+    inputSecond3,
+    inputSecond4
+  );
+
+  const activInputThird = activInputsThird(
+    activMenu,
+    inputThird,
+    inputThird2,
+    inputThird3,
+    inputThird4
+  );
+
+  const activInputFourth = activInputsFourth(
+    activMenu,
+    inputFourth,
+    inputFourth2,
+    inputFourth3,
+    inputFourth4
+  );
+
+  const setInputActiv = activSetInputs(
+    activMenu,
+    setInput,
+    setInput2,
+    setInput3,
+    setInput4
+  );
+
+  const setInputActivSecond = activSetInputsSecond(
+    activMenu,
+    setInputSecond,
+    setInputSecond2,
+    setInputSecond3,
+    setInputSecond4
+  );
+
+  const setInputActivThird = activSetInputsThird(
+    activMenu,
+    setInputThird,
+    setInputThird2,
+    setInputThird3,
+    setInputThird4
+  );
+
+  const setInputActivFourth = activSetInputsFourth(
+    activMenu,
+    setInputFourth,
+    setInputFourth2,
+    setInputFourth3,
+    setInputFourth4
   );
 
   useEffect(() => {
@@ -157,7 +244,6 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   }
 
   function activ(event) {
-    // visibli();
     if (event.currentTarget.id === 'flowerSystem') {
       return setActivMenu('flowerSystem');
     }
@@ -173,7 +259,6 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   }
 
   function rightsActiv(event) {
-    // rightsVisibli();
     if (event.currentTarget.id === 'rightsFlowerSystem') {
       return setRightsActivMenu('rightsFlowerSystem');
     }
@@ -196,6 +281,26 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   function rightsActivListColum() {
     rightsVisibli();
   }
+
+  function inputToSetValue(
+    activInput,
+    activInputSecond,
+    activInputThird,
+    activInputFourth
+  ) {
+    activSetInput(
+      `${activInput},${activInputSecond},${activInputThird},${activInputFourth}`
+    );
+  }
+  useEffect(() => {
+    inputToSetValue(
+      activInput,
+      activInputSecond,
+      activInputThird,
+      activInputFourth
+    );
+    console.log(colorInput);
+  }, [activInput, activInputSecond, activInputThird, activInputFourth]);
 
   return (
     <WrraperOnverter>
@@ -220,38 +325,67 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
             </WrraperListColum>
           ) : null}
           {activMenu === 'flowerSystem' ? (
-            <InputColor
-              type="text"
-              name="ColorInput"
-              value={colorInput}
-              onChange={event => setColorInput(event.target.value)}
+            <ColorsInputPicker
+              activFlower={activFlower}
+              colorInputValue={colorInputValue}
+              setInput={setInputActiv}
+              setInputSecond={setInputActivSecond}
+              setInputThird={setInputActivThird}
+              setInputFourth={setInputActivFourth}
+              input={activInput}
+              inputSecond={activInputSecond}
+              inputThird={activInputThird}
+              inputFourth={activInputFourth}
             />
           ) : null}
           {activMenu === 'flowerSystemSecond' ? (
-            <InputColor
-              type="text"
-              name="ColorInputSecond"
-              value={colorInputSecond}
-              onChange={event => setColorInputSecond(event.target.value)}
+            <ColorsInputPicker
+              activFlower={activFlower}
+              colorInputValue={colorInputValue}
+              setInput={setInputActiv}
+              setInputSecond={setInputActivSecond}
+              setInputThird={setInputActivThird}
+              setInputFourth={setInputActivFourth}
+              input={activInput}
+              inputSecond={activInputSecond}
+              inputThird={activInputThird}
+              inputFourth={activInputFourth}
             />
           ) : null}
           {activMenu === 'flowerSystemThird' ? (
-            <InputColor
-              type="text"
-              name="ColorInputThird"
-              value={colorInputThird}
-              onChange={event => setColorInputThird(event.target.value)}
+            <ColorsInputPicker
+              activFlower={activFlower}
+              colorInputValue={colorInputValue}
+              setInput={setInputActiv}
+              setInputSecond={setInputActivSecond}
+              setInputThird={setInputActivThird}
+              setInputFourth={setInputActivFourth}
+              input={activInput}
+              inputSecond={activInputSecond}
+              inputThird={activInputThird}
+              inputFourth={activInputFourth}
             />
           ) : null}
           {activMenu === 'flowerSystemFourth' ? (
-            <InputColor
-              type="text"
-              name="colorInputFourth"
-              value={colorInputFourth}
-              onChange={event => setColorInputFourth(event.target.value)}
+            <ColorsInputPicker
+              activFlower={activFlower}
+              colorInputValue={colorInputValue}
+              setInput={setInputActiv}
+              setInputSecond={setInputActivSecond}
+              setInputThird={setInputActivThird}
+              setInputFourth={setInputActivFourth}
+              input={activInput}
+              inputSecond={activInputSecond}
+              inputThird={activInputThird}
+              inputFourth={activInputFourth}
             />
           ) : null}
         </WrraperInput>
+        {/* <ColorsInputPicker
+          activFlower={activFlower}
+          colorInput={colorInput}
+          activSetInput={activSetInput}
+        /> */}
       </div>
       <WrraperRightsBtnGroup>
         <BtnPicker id="rightsFlowerSystem" onClick={rightsActiv}>
