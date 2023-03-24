@@ -1,6 +1,7 @@
-// import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Input,
+  InputHexOrName,
   Tekst,
   WrapperInput,
   WrapperNameColor,
@@ -8,7 +9,8 @@ import {
 
 export const ColorsInputPicker = ({
   activFlower,
-  colorInputValue,
+  activSetNameOrHEX,
+  activNameOrHEX,
   setInput,
   setInputSecond,
   setInputThird,
@@ -18,39 +20,77 @@ export const ColorsInputPicker = ({
   inputThird,
   inputFourth,
 }) => {
+  const [nameOrHex, setNameOrHex] = useState(false);
   const namePallete = activFlower.split('');
+
+  useEffect(() => {
+    if (activFlower === 'HEX' || activFlower === 'Name') {
+      setNameOrHex(true);
+    } else {
+      setNameOrHex(false);
+    }
+  }, [activFlower]);
+
   return (
-    <WrapperInput>
-      <WrapperNameColor>
-        <Tekst>{namePallete[0] || ''}</Tekst>
-      </WrapperNameColor>
-      <Input onChange={event => setInput(event.target.value)} value={input} />
-      <WrapperNameColor>
-        <Tekst>{namePallete[1] || ''}</Tekst>
-      </WrapperNameColor>
-      <Input
-        onChange={event => setInputSecond(event.target.value)}
-        value={inputSecond}
-      />
-      <WrapperNameColor>
-        <Tekst>{namePallete[2] || ''}</Tekst>
-      </WrapperNameColor>
-      <Input
-        onChange={event => setInputThird(event.target.value)}
-        value={inputThird}
-      />
-      {namePallete[3] ? (
-        <>
+    <div>
+      {nameOrHex ? (
+        <WrapperInput>
           <WrapperNameColor>
-            <Tekst>{namePallete[3] || ''}</Tekst>
+            <Tekst>#</Tekst>
+          </WrapperNameColor>
+          <InputHexOrName
+            onChange={event => activSetNameOrHEX(event.target.value)}
+            value={activNameOrHEX}
+          />
+        </WrapperInput>
+      ) : (
+        <WrapperInput>
+          <WrapperNameColor>
+            <Tekst>{namePallete[0] || ''}</Tekst>
           </WrapperNameColor>
           <Input
-            onChange={event => setInputFourth(event.target.value)}
-            value={inputFourth}
+            onChange={event =>
+              setInput(event.target.value.replace(/[^0-9 .]/g, ''))
+            }
+            value={input}
           />
-        </>
-      ) : null}
-      <Input />
-    </WrapperInput>
+          <WrapperNameColor>
+            <Tekst>{namePallete[1] || ''}</Tekst>
+          </WrapperNameColor>
+          <Input
+            onChange={event =>
+              setInputSecond(event.target.value.replace(/[^0-9 .]/g, ''))
+            }
+            value={inputSecond}
+          />
+          <WrapperNameColor>
+            <Tekst>{namePallete[2] || ''}</Tekst>
+          </WrapperNameColor>
+          <Input
+            onChange={event =>
+              setInputThird(event.target.value.replace(/[^0-9 .]/g, ''))
+            }
+            value={inputThird}
+          />
+          {namePallete[3] ? (
+            <>
+              <WrapperNameColor>
+                <Tekst>{namePallete[3] || ''}</Tekst>
+              </WrapperNameColor>
+              <Input
+                // type="Number"
+                onChange={event =>
+                  setInputFourth(event.target.value.replace(/[^0-9 .]/g, ''))
+                }
+                value={inputFourth}
+                // min="0"
+                // max="1"
+              />
+            </>
+          ) : null}
+          <Input readOnly value="100%" />
+        </WrapperInput>
+      )}
+    </div>
   );
 };

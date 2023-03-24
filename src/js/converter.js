@@ -89,10 +89,13 @@ export default class Converter {
 
 
     static CMYKToRGB(cyan, magenta, yellow, key) {
+        cyan = cyan / 100
+        magenta = magenta / 100
+        yellow = yellow / 100
+        key = key / 100
         const red = Math.round(255 * (1 - cyan) * (1 - key))
         const green = Math.round(255 * (1 - magenta) * (1 - key))
         const blue = Math.round(255 * (1 - yellow) * (1 - key))
-
         return this._roundRGB(red, green, blue);
     }
 
@@ -118,10 +121,11 @@ export default class Converter {
         const yellow = ((1 - calcBlue - key) / (1 - key));
 
         const cmyk = {}
-        cmyk.cyan = (cyan).toFixed(11);
-        cmyk.magenta = (magenta).toFixed(11);
-        cmyk.yellow = (yellow).toFixed(11);
-        cmyk.key = (key).toFixed(11);
+        cmyk.cyan = ((cyan).toFixed(2)) * 100;
+        cmyk.magenta = ((magenta).toFixed(2)) * 100;
+        cmyk.yellow = ((yellow).toFixed(2)) * 100;
+        cmyk.key = ((key).toFixed(2)) * 100;
+        // console.log(cmyk);
 
 
         return cmyk;
@@ -187,8 +191,8 @@ export default class Converter {
     //  */
 
     static HSLToRGB(hue, saturation, lightness) {
-        // saturation /= 100;
-        // lightness /= 100;
+        saturation = saturation / 100;
+        lightness = lightness / 100;
 
         let c = (1 - Math.abs(2 * lightness - 1)) * saturation,
             x = c * (1 - Math.abs((hue / 60) % 2 - 1)),
@@ -264,12 +268,12 @@ export default class Converter {
         saturation = +(saturation).toFixed(11);
         lightness = +(lightness).toFixed(11);
 
-        const hls = {}
-        hls.hue = hue;
-        hls.saturation = saturation;
-        hls.lightness = lightness;
+        const hsl = {}
+        hsl.hue = hue;
+        hsl.saturation = saturation.toFixed(2) * 100;
+        hsl.lightness = lightness.toFixed(2) * 100;
 
-        return hls;
+        return hsl;
     }
 
     // /**
@@ -458,6 +462,8 @@ export default class Converter {
     //  */
 
     static HSVToRGB(hue, saturation, value) {
+        // saturation = saturation / 100
+        // value = value / 100
         let red = Number;
         let green = Number;
         let blue = Number;
@@ -531,8 +537,8 @@ export default class Converter {
         saturation = saturation.toFixed(11);
         const hsv = {}
         hsv.hue = circle.hue;
-        hsv.saturation = saturation;
-        hsv.value = value;
+        hsv.saturation = saturation
+        hsv.value = value
 
         return hsv
     }
@@ -602,9 +608,9 @@ export default class Converter {
         const magenta = 1 - (green / 255);
         const yellow = 1 - (blue / 255);
         const cmy = {};
-        cmy.cyan = cyan;
-        cmy.magenta = magenta;
-        cmy.yellow = yellow;
+        cmy.cyan = cyan.toFixed(2) * 100;
+        cmy.magenta = magenta.toFixed(2) * 100;
+        cmy.yellow = yellow.toFixed(2) * 100;
 
         return cmy;
     }
@@ -618,6 +624,9 @@ export default class Converter {
 
 
     static CMYToRGB(cyan, magenta, yellow) {
+        cyan = cyan / 100
+        magenta = magenta / 100
+        yellow = yellow / 100
         const red = (1 - cyan) * 255;
         const green = (1 - magenta) * 255;
         const blue = (1 - yellow) * 255;
@@ -643,9 +652,9 @@ export default class Converter {
         const Z = redCulc * 0.0193 + greenCulc * 0.1192 + blueCulc * 0.9505;
 
         const xyz = {};
-        xyz.X = X;
-        xyz.Y = Y;
-        xyz.Z = Z;
+        xyz.X = X.toFixed(2);
+        xyz.Y = Y.toFixed(2);
+        xyz.Z = Z.toFixed(2);
         return xyz;
     }
 
@@ -658,10 +667,10 @@ export default class Converter {
     //  */
 
     static XYZToRGB(X, Y, Z) {
-        X = X / 100;
-        Y = Y / 100;
-        Z = Z / 100;
-
+        X = Number(X) / 100;
+        Y = Number(Y) / 100;
+        Z = Number(Z) / 100;
+        console.log(X, Y, Z);
         let red = X * 3.2406 + Y * -1.5372 + Z * -0.4986;
         let green = X * -0.9689 + Y * 1.8758 + Z * 0.0415;
         let blue = X * 0.0557 + Y * -0.2040 + Z * 1.0570;
@@ -669,6 +678,7 @@ export default class Converter {
         red = this._prepareColorForXYZToRGBOutput(red);
         green = this._prepareColorForXYZToRGBOutput(green);
         blue = this._prepareColorForXYZToRGBOutput(blue);
+        console.log(red, green, blue);
 
         return this._roundRGB(red, green, blue);
     }
@@ -682,14 +692,18 @@ export default class Converter {
 
 
     static RGBToYxy(red, green, blue) {
-        const { X, Y, Z } = this.RGBToXYZ(red, green, blue);
+        console.log(this.RGBToXYZ(red, green, blue))
+        const XYZ = this.RGBToXYZ(red, green, blue);
+        const X = Number(XYZ.X);
+        const Y = Number(XYZ.Y);
+        const Z = Number(XYZ.Z);
         const x = X / (X + Y + Z);
         const y = Y / (X + Y + Z);
 
         const yxy = {};
-        yxy.Y = Y;
-        yxy.x = x;
-        yxy.y = y;
+        yxy.Y = Math.round(Y);
+        yxy.x = x.toFixed(2) * 100;
+        yxy.y = y.toFixed(2) * 100;
         return yxy;
     }
 
@@ -701,6 +715,8 @@ export default class Converter {
     //  */
 
     static YxyToRGB(Y, x, y) {
+        x = x / 100
+        y = y / 100
         const X = x * (Y / y);
         const Z = (1 - x - y) * (Y / y);
 

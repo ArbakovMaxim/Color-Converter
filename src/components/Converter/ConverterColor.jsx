@@ -25,6 +25,8 @@ import { activSetInputs } from 'util/ActivElement/activSetInputs';
 import { activSetInputsSecond } from 'util/ActivElement/activSetInputsSecond';
 import { activSetInputsThird } from 'util/ActivElement/activSetInputsThird';
 import { activSetInputsFourth } from 'util/ActivElement/activSetInputsFourth';
+import { ActivInputNameOrHEX } from 'util/ActivElement/activInputNameOrHEX';
+import { activSetInputNameOrHEX } from 'util/ActivElement/ActivSetInputNameOrHEX';
 
 const ConverterColor = ({ color, bgColor, saturation }) => {
   //////input set
@@ -34,7 +36,13 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   const [colorInputFourth, setColorInputFourth] = useState('');
   const [rightsInput, setRightsInput] = useState('');
 
-  //////////////input in state
+  //////////////input state in colorsInputPicker
+  //Neme or HEX
+  const [inputNameOrHEX, setInputNameOrHEX] = useState('');
+  const [inputNameOrHEXSecond, setInputNameOrHEXSecond] = useState('');
+  const [inputNameOrHEXThird, setInputNameOrHEXThird] = useState('');
+  const [inputNameOrHEXFourth, setInputNameOrHEXFourth] = useState('');
+  //1
   const [input, setInput] = useState('');
   const [inputSecond, setInputSecond] = useState('');
   const [inputThird, setInputThird] = useState('');
@@ -73,6 +81,22 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
     useState('CMYK');
   const [rightsFlowerSystemFourth, setRightsFlowerSystemFourth] =
     useState('HSL');
+
+  const activNameOrHEX = ActivInputNameOrHEX(
+    activMenu,
+    inputNameOrHEX,
+    inputNameOrHEXSecond,
+    inputNameOrHEXThird,
+    inputNameOrHEXFourth
+  );
+
+  const activSetNameOrHEX = activSetInputNameOrHEX(
+    activMenu,
+    setInputNameOrHEX,
+    setInputNameOrHEXSecond,
+    setInputNameOrHEXThird,
+    setInputNameOrHEXFourth
+  );
 
   const activSetInput = activColorInput(
     activMenu,
@@ -166,18 +190,24 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   useEffect(() => {
     const colorConverter = saturationToInput(color, saturation, activFlower);
     if (activFlower === 'HEX' || activFlower === 'Name') {
-      activSetInput(colorConverter);
+      activSetNameOrHEX(colorConverter);
       return;
     }
+    console.log(colorConverter);
     const result = Object.values({ colorConverter }).map(i =>
       Object.values(i)
     )[0];
-    if (result[0] && result[1] && result[2] && result[3]) {
-      activSetInput(`${result[0]}, ${result[1]}, ${result[2]}, ${result[3]}`);
+    if (result.length === 4) {
+      setInputActiv(result[0]);
+      setInputActivSecond(result[1]);
+      setInputActivThird(result[2]);
+      setInputActivFourth(result[3]);
       return;
     }
-    if (result[0] && result[1] && result[2]) {
-      activSetInput(`${result[0]}, ${result[1]}, ${result[2]}`);
+    if (result.length === 3) {
+      setInputActiv(result[0]);
+      setInputActivSecond(result[1]);
+      setInputActivThird(result[2]);
     }
   }, [saturation.s, saturation.h, saturation.v]);
 
@@ -276,6 +306,11 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   function activListColum() {
     visibli();
     activSetInput('');
+    activSetNameOrHEX('');
+    setInputActiv('');
+    setInputActivSecond('');
+    setInputActivThird('');
+    setInputActivFourth('');
   }
 
   function rightsActivListColum() {
@@ -286,8 +321,13 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
     activInput,
     activInputSecond,
     activInputThird,
-    activInputFourth
+    activInputFourth,
+    activNameOrHEX
   ) {
+    if (activFlower === 'HEX' || activFlower === 'Name') {
+      activSetInput(activNameOrHEX);
+      return;
+    }
     activSetInput(
       `${activInput},${activInputSecond},${activInputThird},${activInputFourth}`
     );
@@ -297,10 +337,16 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
       activInput,
       activInputSecond,
       activInputThird,
-      activInputFourth
+      activInputFourth,
+      activNameOrHEX
     );
-    console.log(colorInput);
-  }, [activInput, activInputSecond, activInputThird, activInputFourth]);
+  }, [
+    activInput,
+    activInputSecond,
+    activInputThird,
+    activInputFourth,
+    activNameOrHEX,
+  ]);
 
   return (
     <WrraperOnverter>
@@ -324,68 +370,20 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
               <ListColorMenu target={targetLi} />
             </WrraperListColum>
           ) : null}
-          {activMenu === 'flowerSystem' ? (
-            <ColorsInputPicker
-              activFlower={activFlower}
-              colorInputValue={colorInputValue}
-              setInput={setInputActiv}
-              setInputSecond={setInputActivSecond}
-              setInputThird={setInputActivThird}
-              setInputFourth={setInputActivFourth}
-              input={activInput}
-              inputSecond={activInputSecond}
-              inputThird={activInputThird}
-              inputFourth={activInputFourth}
-            />
-          ) : null}
-          {activMenu === 'flowerSystemSecond' ? (
-            <ColorsInputPicker
-              activFlower={activFlower}
-              colorInputValue={colorInputValue}
-              setInput={setInputActiv}
-              setInputSecond={setInputActivSecond}
-              setInputThird={setInputActivThird}
-              setInputFourth={setInputActivFourth}
-              input={activInput}
-              inputSecond={activInputSecond}
-              inputThird={activInputThird}
-              inputFourth={activInputFourth}
-            />
-          ) : null}
-          {activMenu === 'flowerSystemThird' ? (
-            <ColorsInputPicker
-              activFlower={activFlower}
-              colorInputValue={colorInputValue}
-              setInput={setInputActiv}
-              setInputSecond={setInputActivSecond}
-              setInputThird={setInputActivThird}
-              setInputFourth={setInputActivFourth}
-              input={activInput}
-              inputSecond={activInputSecond}
-              inputThird={activInputThird}
-              inputFourth={activInputFourth}
-            />
-          ) : null}
-          {activMenu === 'flowerSystemFourth' ? (
-            <ColorsInputPicker
-              activFlower={activFlower}
-              colorInputValue={colorInputValue}
-              setInput={setInputActiv}
-              setInputSecond={setInputActivSecond}
-              setInputThird={setInputActivThird}
-              setInputFourth={setInputActivFourth}
-              input={activInput}
-              inputSecond={activInputSecond}
-              inputThird={activInputThird}
-              inputFourth={activInputFourth}
-            />
-          ) : null}
+          <ColorsInputPicker
+            activFlower={activFlower}
+            activSetNameOrHEX={activSetNameOrHEX}
+            activNameOrHEX={activNameOrHEX}
+            setInput={setInputActiv}
+            setInputSecond={setInputActivSecond}
+            setInputThird={setInputActivThird}
+            setInputFourth={setInputActivFourth}
+            input={activInput}
+            inputSecond={activInputSecond}
+            inputThird={activInputThird}
+            inputFourth={activInputFourth}
+          />
         </WrraperInput>
-        {/* <ColorsInputPicker
-          activFlower={activFlower}
-          colorInput={colorInput}
-          activSetInput={activSetInput}
-        /> */}
       </div>
       <WrraperRightsBtnGroup>
         <BtnPicker id="rightsFlowerSystem" onClick={rightsActiv}>
@@ -420,3 +418,47 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
 };
 
 export default ConverterColor;
+
+// ) : null}
+// {activMenu === 'flowerSystemSecond' ? (
+//   <ColorsInputPicker
+//     activFlower={activFlower}
+//     colorInputValue={colorInputValue}
+//     setInput={setInputActiv}
+//     setInputSecond={setInputActivSecond}
+//     setInputThird={setInputActivThird}
+//     setInputFourth={setInputActivFourth}
+//     input={activInput}
+//     inputSecond={activInputSecond}
+//     inputThird={activInputThird}
+//     inputFourth={activInputFourth}
+//   />
+// ) : null}
+// {activMenu === 'flowerSystemThird' ? (
+//   <ColorsInputPicker
+//     activFlower={activFlower}
+//     colorInputValue={colorInputValue}
+//     setInput={setInputActiv}
+//     setInputSecond={setInputActivSecond}
+//     setInputThird={setInputActivThird}
+//     setInputFourth={setInputActivFourth}
+//     input={activInput}
+//     inputSecond={activInputSecond}
+//     inputThird={activInputThird}
+//     inputFourth={activInputFourth}
+//   />
+// ) : null}
+// {activMenu === 'flowerSystemFourth' ? (
+//   <ColorsInputPicker
+//     activFlower={activFlower}
+//     colorInputValue={colorInputValue}
+//     setInput={setInputActiv}
+//     setInputSecond={setInputActivSecond}
+//     setInputThird={setInputActivThird}
+//     setInputFourth={setInputActivFourth}
+//     input={activInput}
+//     inputSecond={activInputSecond}
+//     inputThird={activInputThird}
+//     inputFourth={activInputFourth}
+//   />
+// ) : null}

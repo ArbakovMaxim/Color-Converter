@@ -31,7 +31,7 @@ export function saturationToInput(color, saturation, flowerSystem) {
             result = color.getName()
             return result
         } catch (error) {
-            return result
+            return "no name"
         }
 
     }
