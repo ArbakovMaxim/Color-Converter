@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.js": "/Color-Converter/static/js/main.0a3d01b3.js",
+    "main.js": "/Color-Converter/static/js/main.e85d70e2.js",
     "static/js/637.e47b0f18.chunk.js": "/Color-Converter/static/js/637.e47b0f18.chunk.js",
-    "static/js/93.39817642.chunk.js": "/Color-Converter/static/js/93.39817642.chunk.js",
-    "static/js/388.5a55b78c.chunk.js": "/Color-Converter/static/js/388.5a55b78c.chunk.js",
-    "static/js/600.7759181f.chunk.js": "/Color-Converter/static/js/600.7759181f.chunk.js",
+    "static/js/234.8609c056.chunk.js": "/Color-Converter/static/js/234.8609c056.chunk.js",
+    "static/js/644.ff9b3be5.chunk.js": "/Color-Converter/static/js/644.ff9b3be5.chunk.js",
+    "static/js/600.d27badda.chunk.js": "/Color-Converter/static/js/600.d27badda.chunk.js",
     "static/js/2.c0fb0dcc.chunk.js": "/Color-Converter/static/js/2.c0fb0dcc.chunk.js",
     "static/js/881.8db2e235.chunk.js": "/Color-Converter/static/js/881.8db2e235.chunk.js",
     "static/js/833.6dabee4b.chunk.js": "/Color-Converter/static/js/833.6dabee4b.chunk.js",
+    "static/js/856.ba09508c.chunk.js": "/Color-Converter/static/js/856.ba09508c.chunk.js",
     "static/media/logoTransporent.png": "/Color-Converter/static/media/logoTransporent.b0e3521d3d015e129f91.png",
     "index.html": "/Color-Converter/index.html",
-    "main.0a3d01b3.js.map": "/Color-Converter/static/js/main.0a3d01b3.js.map",
+    "main.e85d70e2.js.map": "/Color-Converter/static/js/main.e85d70e2.js.map",
     "637.e47b0f18.chunk.js.map": "/Color-Converter/static/js/637.e47b0f18.chunk.js.map",
-    "93.39817642.chunk.js.map": "/Color-Converter/static/js/93.39817642.chunk.js.map",
-    "388.5a55b78c.chunk.js.map": "/Color-Converter/static/js/388.5a55b78c.chunk.js.map",
-    "600.7759181f.chunk.js.map": "/Color-Converter/static/js/600.7759181f.chunk.js.map",
+    "234.8609c056.chunk.js.map": "/Color-Converter/static/js/234.8609c056.chunk.js.map",
+    "644.ff9b3be5.chunk.js.map": "/Color-Converter/static/js/644.ff9b3be5.chunk.js.map",
+    "600.d27badda.chunk.js.map": "/Color-Converter/static/js/600.d27badda.chunk.js.map",
     "2.c0fb0dcc.chunk.js.map": "/Color-Converter/static/js/2.c0fb0dcc.chunk.js.map",
     "881.8db2e235.chunk.js.map": "/Color-Converter/static/js/881.8db2e235.chunk.js.map",
-    "833.6dabee4b.chunk.js.map": "/Color-Converter/static/js/833.6dabee4b.chunk.js.map"
+    "833.6dabee4b.chunk.js.map": "/Color-Converter/static/js/833.6dabee4b.chunk.js.map",
+    "856.ba09508c.chunk.js.map": "/Color-Converter/static/js/856.ba09508c.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.0a3d01b3.js"
+    "static/js/main.e85d70e2.js"
   ]
 }
