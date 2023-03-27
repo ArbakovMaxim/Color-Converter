@@ -1,0 +1,153 @@
+[
+  {
+    "name": "Aqua",
+    "hex": "#00FFFF",
+    "rgb": "0, 255, 255",
+    "color": "#333333"
+  },
+  {
+    "name": "Cyan",
+    "hex": "#00FFFF",
+    "rgb": "0, 255, 255",
+    "color": "#333333"
+  },
+
+  {
+    "name": "LightCyan",
+    "hex": "#E0FFFF",
+    "rgb": "224, 255, 255",
+    "color": "#333333"
+  },
+  {
+    "name": "PaleTurquoise",
+    "hex": "#AFEEEE",
+    "rgb": "175, 238, 238",
+    "color": "#333333"
+  },
+  {
+    "name": "Aquamarine",
+    "hex": "#7FFFD4",
+    "rgb": "127, 255, 212",
+    "color": "#333333"
+  },
+  {
+    "name": "Turquoise",
+    "hex": "#40E0D0",
+    "rgb": "64, 224, 208",
+    "color": "#333333"
+  },
+  {
+    "name": "MediumTurquoise",
+    "hex": "#48D1CC",
+    "rgb": "72, 209, 204",
+    "color": "#333333"
+  },
+  {
+    "name": "DarkTurquoise",
+    "hex": "#00CED1",
+    "rgb": "0, 206, 209",
+    "color": "#333333"
+  },
+  {
+    "name": "CadetBlue",
+    "hex": "#5F9EA0",
+    "rgb": "95, 158, 160",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "SteelBlue",
+    "hex": "#4682B4",
+    "rgb": "70, 130, 180",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "LightSteelBlue",
+    "hex": "#B0C4DE",
+    "rgb": "176, 196, 222",
+    "color": "#333333"
+  },
+  {
+    "name": "PowderBlue",
+    "hex": "#FA8072",
+    "rgb": "176, 224, 230",
+    "color": "#333333"
+  },
+  {
+    "name": "LightBlue",
+    "hex": "#ADD8E6",
+    "rgb": "173, 216, 230",
+    "color": "#333333"
+  },
+  {
+    "name": "SkyBlue",
+    "hex": "#87CEEB",
+    "rgb": "135, 206, 235",
+    "color": "#333333"
+  },
+  {
+    "name": "LightSkyBlue",
+    "hex": "#87CEFA",
+    "rgb": "135, 206, 250",
+    "color": "#333333"
+  },
+  {
+    "name": "DeepSkyBlue",
+    "hex": "#00BFFF",
+    "rgb": "0, 191, 255",
+    "color": "#333333"
+  },
+  {
+    "name": "DodgerBlue",
+    "hex": "#1E90FF",
+    "rgb": "30, 144, 255",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "CornflowerBlue",
+    "hex": "#6495ED",
+    "rgb": "100, 149, 237",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "MediumSlateBlue",
+    "hex": "#7B68EE",
+    "rgb": "123, 104, 238",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "RoyalBlue",
+    "hex": "#4169E1",
+    "rgb": "65, 105, 225",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Blue",
+    "hex": "#0000FF",
+    "rgb": "0, 0, 255",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "MediumBlue",
+    "hex": "#0000CD",
+    "rgb": "0, 0, 205",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DarkBlue",
+    "hex": "#00008B",
+    "rgb": "0, 0, 139",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Navy",
+    "hex": "#000080",
+    "rgb": "0, 0, 128",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "MidnightBlue",
+    "hex": "#191970",
+    "rgb": "25, 25, 112",
+    "color": "#FFFFFF"
+  }
+]

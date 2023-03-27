@@ -1,0 +1,141 @@
+[
+  {
+    "name": "GreenYellow",
+    "hex": "#ADFF2F",
+    "rgb": "173, 255, 47",
+    "color": "#333333"
+  },
+  {
+    "name": "Chartreuse",
+    "hex": "#7FFF00",
+    "rgb": "127, 255, 0",
+    "color": "#333333"
+  },
+
+  {
+    "name": "LawnGreen",
+    "hex": "#7CFC00",
+    "rgb": "124, 252, 0",
+    "color": "#333333"
+  },
+  {
+    "name": "Lime",
+    "hex": "#00FF00",
+    "rgb": "0, 255, 0",
+    "color": "#333333"
+  },
+  {
+    "name": "LimeGreen",
+    "hex": "#32CD32",
+    "rgb": "50, 205, 50",
+    "color": "#333333"
+  },
+  {
+    "name": "PaleGreen",
+    "hex": "#98FB98",
+    "rgb": "152, 251, 152",
+    "color": "#333333"
+  },
+  {
+    "name": "LightGreen",
+    "hex": "#90EE90",
+    "rgb": "144, 238, 144",
+    "color": "#333333"
+  },
+  {
+    "name": "MediumSpringGreen",
+    "hex": "#00FA9A",
+    "rgb": "0, 250, 154",
+    "color": "#333333"
+  },
+  {
+    "name": "SpringGreen",
+    "hex": "#00FF7F",
+    "rgb": "0, 255, 127",
+    "color": "#333333"
+  },
+  {
+    "name": "MediumSeaGreen",
+    "hex": "#3CB371",
+    "rgb": "60, 179, 113",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "SeaGreen",
+    "hex": "#2E8B57",
+    "rgb": "46, 139, 87",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "ForestGreen",
+    "hex": "#228B22",
+    "rgb": "34, 139, 34",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Green",
+    "hex": "#008000",
+    "rgb": "0, 128, 0",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DarkGreen",
+    "hex": "#006400",
+    "rgb": "0, 100, 0",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "YellowGreen",
+    "hex": "#9ACD32",
+    "rgb": "154, 205, 50",
+    "color": "#333333"
+  },
+  {
+    "name": "OliveDrab",
+    "hex": "#6B8E23",
+    "rgb": "107, 142, 35",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Olive",
+    "hex": "#808000",
+    "rgb": "128, 128, 0",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DarkOliveGreen",
+    "hex": "#556B2F",
+    "rgb": "85, 107, 47",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "MediumAquamarine",
+    "hex": "#66CDAA",
+    "rgb": "102, 205, 170",
+    "color": "#333333"
+  },
+  {
+    "name": "DarkSeaGreen",
+    "hex": "#8FBC8F",
+    "rgb": "143, 188, 143",
+    "color": "#333333"
+  },
+  {
+    "name": "LightSeaGreen",
+    "hex": "#20B2AA",
+    "rgb": "32, 178, 170",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DarkCyan",
+    "hex": "#008B8B",
+    "rgb": "0, 139, 139",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Teal",
+    "hex": "#008080",
+    "rgb": "0, 128, 128",
+    "color": "#FFFFFF"
+  }
+]

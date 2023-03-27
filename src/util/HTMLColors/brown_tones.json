@@ -1,0 +1,105 @@
+[
+  {
+    "name": "Cornsilk",
+    "hex": "#FFF8DC",
+    "rgb": "255, 248, 220",
+    "color": "#333333"
+  },
+  {
+    "name": "BlanchedAlmond",
+    "hex": "#FFEBCD",
+    "rgb": "255, 235, 205",
+    "color": "#333333"
+  },
+
+  {
+    "name": "Bisque",
+    "hex": "#FFE4C4",
+    "rgb": "255, 228, 196",
+    "color": "#333333"
+  },
+  {
+    "name": "NavajoWhite",
+    "hex": "#FFDEAD",
+    "rgb": "255, 222, 173",
+    "color": "#333333"
+  },
+  {
+    "name": "Wheat",
+    "hex": "#F5DEB3",
+    "rgb": "245, 222, 179",
+    "color": "#333333"
+  },
+  {
+    "name": "BurlyWood",
+    "hex": "#DEB887",
+    "rgb": "222, 184, 135",
+    "color": "#333333"
+  },
+  {
+    "name": "Tan",
+    "hex": "#D2B48C",
+    "rgb": "210, 180, 140",
+    "color": "#333333"
+  },
+  {
+    "name": "RosyBrown",
+    "hex": "#BC8F8F",
+    "rgb": "188, 143, 143",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "SandyBrown",
+    "hex": "#F4A460",
+    "rgb": "244, 164, 96",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Goldenrod",
+    "hex": "#DAA520",
+    "rgb": "218, 165, 32",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DarkGoldenRod",
+    "hex": "#B8860B",
+    "rgb": "184, 134, 11",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Peru",
+    "hex": "#CD853F",
+    "rgb": "205, 133, 63",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Chocolate",
+    "hex": "#D2691E",
+    "rgb": "210, 105, 30",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "SaddleBrown",
+    "hex": "#8B4513",
+    "rgb": "139, 69, 19",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Sienna",
+    "hex": "#A0522D",
+    "rgb": "160, 82, 45",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Brown",
+    "hex": "#A52A2A",
+    "rgb": "165, 42, 42",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "Maroon",
+    "hex": "#800000",
+    "rgb": "128, 0, 0",
+    "color": "#FFFFFF"
+  }
+]

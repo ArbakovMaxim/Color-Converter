@@ -1,9 +1,26 @@
-import { WraperColorWebSafe } from './ColorWebSafe.styled';
+import websafe_colors from '../../util/websafe_colors.json';
+import {
+  ColorBox,
+  ColorHEX,
+  ColorRGB,
+  HexTitle,
+  List,
+  ListItem,
+  NameTitle,
+  Title,
+  WraperColorWebSafe,
+  Wrapper,
+  WrapperHex,
+  WrapperHexAndRgb,
+  WrapperRgb,
+} from './ColorWebSafe.styled';
+import Color from '../../js/color';
 
 const ColorWebSafe = () => {
+  const colors = new Color();
   return (
     <WraperColorWebSafe>
-      <h2>БЕЗОПАСНЫЕ ВЕБ-ЦВЕТА</h2>
+      <Title>БЕЗОПАСНЫЕ ВЕБ-ЦВЕТА</Title>
       <p>
         Вашему вниманию предлагается палитра цветов, рекомендуемых для экранного
         дизайна. Безопасные цвета всегда неизменны при переходе от одного
@@ -28,6 +45,39 @@ const ColorWebSafe = () => {
         шестнадцатеричных значений не должно отличаться от 00, 33, 66, 99, CC,
         FF.
       </p>
+      <Wrapper>
+        <h2>ТАБЛИЦА “БЕЗОПАСНЫХ” ВЕБ-ЦВЕТОВ</h2>
+        <p>
+          Палитра состоит из 216 безопасных веб-цветов. Под каждым цветом
+          указаны два значения — RGB, для создания цвета в графическом
+          редакторе, и его шестнадцатеричных HEX-код, для обозначения цвета в
+          HTML.
+        </p>
+        <List>
+          {websafe_colors.map(color => {
+            const bgString = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+            colors.setRGB(color[0], color[1], color[2]);
+            const rgb = colors.getRGBA();
+            return (
+              <ListItem key={bgString}>
+                <ColorBox style={{ backgroundColor: bgString }} />
+                <WrapperHexAndRgb>
+                  <WrapperHex>
+                    <HexTitle>HEX</HexTitle>
+                    <ColorHEX>#{colors.getHEX()}</ColorHEX>
+                  </WrapperHex>
+                  <WrapperRgb>
+                    <NameTitle>RGB</NameTitle>
+                    <ColorRGB>
+                      {rgb.red} {rgb.green} {rgb.blue}
+                    </ColorRGB>
+                  </WrapperRgb>
+                </WrapperHexAndRgb>
+              </ListItem>
+            );
+          })}
+        </List>
+      </Wrapper>
     </WraperColorWebSafe>
   );
 };

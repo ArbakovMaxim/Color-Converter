@@ -1,0 +1,69 @@
+[
+  {
+    "name": "Gold",
+    "hex": "#FFD700",
+    "rgb": "255, 215, 0",
+    "color": "#333333"
+  },
+  {
+    "name": "Yellow",
+    "hex": "#FFFF00",
+    "rgb": "255, 255, 0",
+    "color": "#333333"
+  },
+
+  {
+    "name": "LightYellow",
+    "hex": "#FFFFE0",
+    "rgb": "255, 255, 224",
+    "color": "#333333"
+  },
+  {
+    "name": "LemonChiffon",
+    "hex": "#FFFACD",
+    "rgb": "255, 250, 205",
+    "color": "#333333"
+  },
+  {
+    "name": "LightGoldenrodYellow",
+    "hex": "#FAFAD2",
+    "rgb": "250, 250, 210",
+    "color": "#333333"
+  },
+  {
+    "name": "PapayaWhip",
+    "hex": "#FFEFD5",
+    "rgb": "255, 239, 213",
+    "color": "#333333"
+  },
+  {
+    "name": "Moccasin",
+    "hex": "#FFE4B5",
+    "rgb": "255, 228, 181",
+    "color": "#333333"
+  },
+  {
+    "name": "PeachPuff",
+    "hex": "#FFDAB9",
+    "rgb": "255, 218, 185",
+    "color": "#333333"
+  },
+  {
+    "name": "PaleGoldenrod",
+    "hex": "#EEE8AA",
+    "rgb": "238, 232, 170",
+    "color": "#333333"
+  },
+  {
+    "name": "Khaki",
+    "hex": "#F0E68C",
+    "rgb": "240, 230, 140",
+    "color": "#333333"
+  },
+  {
+    "name": "DarkKhaki",
+    "hex": "#BDB76B",
+    "rgb": "189, 183, 107",
+    "color": "#333333"
+  }
+]

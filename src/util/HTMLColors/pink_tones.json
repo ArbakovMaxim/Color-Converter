@@ -1,0 +1,39 @@
+[
+  {
+    "name": "Pink",
+    "hex": "#FFC0CB",
+    "rgb": "255, 192, 203",
+    "color": "#333333"
+  },
+  {
+    "name": "LightPink",
+    "hex": "#FFB6C1",
+    "rgb": "255, 182, 193",
+    "color": "#333333"
+  },
+
+  {
+    "name": "HotPink",
+    "hex": "#FF69B4",
+    "rgb": "255, 105, 180",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "DeepPink",
+    "hex": "#FF1493",
+    "rgb": "255, 20, 147",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "MediumVioletRed",
+    "hex": "#C71585",
+    "rgb": "199, 21, 133",
+    "color": "#FFFFFF"
+  },
+  {
+    "name": "PaleVioletRed",
+    "hex": "#DB7093",
+    "rgb": "219, 112, 147",
+    "color": "#FFFFFF"
+  }
+]
