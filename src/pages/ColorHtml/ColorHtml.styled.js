@@ -19,7 +19,6 @@ export const WraperColorHtml = styled.div`
     padding-left: 5px;
     padding-right: 5px;
   }
-  
 `;
 export const TitleHTML = styled.h1`
   margin-bottom: 20px;
@@ -34,7 +33,7 @@ export const TextHTML = styled.p`
     font-size: 18px;
     line-height: 25px;
     color: #FFFFFF;
-    `
+    `;
 
 export const WrapperHTML = styled.div`
   padding-top: 52px;
@@ -129,8 +128,8 @@ export const WraperColumnTwo = styled.div`
     grid-column: 1 / 1;
    grid-row: 2 / 2;
   }
-
 `;
+
 export const WraperColumnThree = styled.div`
  grid-column: 2 / 2;
    grid-row: 2 / 2;
