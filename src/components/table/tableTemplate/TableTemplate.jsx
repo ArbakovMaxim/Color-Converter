@@ -5,9 +5,8 @@ import {
   RGBTD,
   Table,
   Tbody,
-  WrapperTable,
   WrapperTableColor,
-} from '../PrimaryСolorsTable.styled';
+} from '../primaryСolors/PrimaryСolorsTable.styled';
 
 export const TableTemplate = ({ colorPalette }) => {
   return (
@@ -34,7 +33,6 @@ export const TableTemplate = ({ colorPalette }) => {
           })}
         </Tbody>
       </Table>
-      <WrapperTable></WrapperTable>
     </WrapperTableColor>
   );
 };

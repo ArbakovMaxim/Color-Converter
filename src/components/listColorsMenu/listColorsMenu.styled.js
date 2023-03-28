@@ -14,12 +14,6 @@ width: 435px;
 &:not(:last-child) {
     gap-right:46px;;
   }
-  /* display:grid; */
-  /* grid-template-columns: 48px 44px 38px 78px;
-  grid-template: repeat(6,48px)/ repeat(6,44px)/ repeat(6,38px)/ repeat(3,78px); */
-  /* grid-template-columns: 48px 44px 38px 78px;
-  grid-gap: 5px 50px;
-  align-items: start; */
 
 `
 

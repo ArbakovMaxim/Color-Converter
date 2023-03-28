@@ -2,114 +2,172 @@ import styled from 'styled-components';
 
 export const WraperColorWebSafe = styled.div`
   width-max:1440px;
-  height: 100%;
-  background-color: #f5fffa;
+  height-max: 100%;
+  background-color: #424343;
   padding-left: 147px;
   padding-right: 147px;
+  @media (max-width: 1050px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media (max-width: 768px) {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  @media (max-width: 500px) {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 `;
 
-export const Wrapper = styled.div`
+export const WrapperTable = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px;
-  background-color: #f8f8f8;
+  padding: 36px 50px 30px 50px;
+  @media (max-width: 867px) {
+    padding-left:5px;
+    padding-right:5px;
+  }
 `;
 
-export const Title = styled.h1`
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 30px;
+export const WrapperSafe = styled.div`
+  padding-top: 52px;
+  padding-bottom: 36px;
+`;
+
+export const TitleSafe = styled.h1`
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 30px;
+  color: #FFFFFF;
+`;
+
+export const TextSafe = styled.p`
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    `
+
+export const TitleTable = styled.h2`
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+`;
+
+export const TextTable = styled.p`
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
 `;
 
 export const ColorBox = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 75px;
   height: 65px;
-  border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 `;
 
-// export const ColorList = styled.div`
-//   display: flex;
-//   flex-wrap: wrap;
-//   justify-content: center;
-//   margin-top: 50px;
-// `;
-
-
-
-
 export const List = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   
-  margin: 0;
-  padding: 0;
+  margin-left:-30px;
+  padding: 21px 33px;
   list-style: none;
+  background-color:#333333;
+
+  @media (max-width: 867px) {
+    justify-content:center;
+    margin-left:0;
+    padding: 21px 5px;
+  }
+
 `;
 
 export const ListItem = styled.li`
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
   width: 196px;
   height: 65px;
-  padding: 0.5rem;
+  margin-left:30px;
   border-radius: 4px;
-  background-color: #f6f6f6;
+  background: #333333;;
   margin-bottom: 0.5rem;
 
-  &:hover {
-    background-color: #ebebeb;
+  @media (max-width: 867px) {
+    justify-content:center;
+    margin-left:0px;
   }
 `;
 
 export const HexTitle = styled.p`
-line-height: 12px;
-    font-size: 12px;
-    font-size: 12px;
-    color: #333;
+    width:30px;
+    color: #FFFFFF;
+    /* background: #333333; */
+    
     font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
 `;
 
 export const NameTitle = styled.p`
-    line-height: 12px;
-    font-size: 12px;
-    color: #666;
+    width:30px;
+    color: #FFFFFF;
+    /* background: #333333; */
+
     font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
 `;
 
 export const ColorHEX = styled.p`
-    padding: 7px;
-    line-height: 12px;
+    text-align: center;
+    background-color: #424243;
+    width: 90px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #FFFFFF;
+
+    font-weight: 300;
     font-size: 12px;
-    color: #666;
-    font-weight: 400;
+    line-height: 18px;
+    
 `;
 export const ColorRGB = styled.p`
-    padding: 7px;
-    line-height: 12px;
+    text-align: center;
+    width: 90px;
+    background-color: #424243;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    color: #FFFFFF;
+
+    font-weight: 300;
     font-size: 12px;
-    color: #666;
-    font-weight: 400;
+    line-height: 18px;
 `;
 
 export const WrapperHexAndRgb = styled.div`
   display:block;
 `;
 export const WrapperHex = styled.div`
-margin-left:1px;
+margin-bottom:3px;
+margin-padding:4px;
+margin-padding:4px;
 align-items: center;
 weight:120px;
 height: 30px;
   display:flex;
 `;
 export const WrapperRgb = styled.div`
-margin-left:1px;
+margin-padding:4px;
+margin-padding:4px;
 align-items: center;
 weight:120px;
 height: 30px;

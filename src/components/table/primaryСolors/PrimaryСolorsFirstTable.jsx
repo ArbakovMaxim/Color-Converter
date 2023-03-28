@@ -2,15 +2,17 @@ import {
   ColorTD,
   HEXTD,
   NameTD,
+  PrimaryTable,
+  PrimaryTableTwo,
   RGBTD,
   Tbody,
-  WrapperTable,
+  WrapperTableColor,
 } from './PrimaryСolorsTable.styled';
 
 export const PrimaryСolorsFirstTable = () => {
   return (
-    <div>
-      <table>
+    <WrapperTableColor>
+      <PrimaryTable>
         <thead>
           <tr>
             <NameTD>HTML Имя Цвета</NameTD>
@@ -48,41 +50,39 @@ export const PrimaryСolorsFirstTable = () => {
             <RGBTD>255, 255, 255</RGBTD>
           </tr>
         </Tbody>
-      </table>
-      <WrapperTable>
-        <table>
-          <Tbody>
-            <tr>
-              <ColorTD color="Fuchsia" colorTitle="#FFFFFF">
-                Fuchsia
-              </ColorTD>
-              <HEXTD>#FF00FF</HEXTD>
-              <RGBTD>255, 0, 255</RGBTD>
-            </tr>
-            <tr>
-              <ColorTD color="Purple" colorTitle="#FFFFFF">
-                Purple
-              </ColorTD>
-              <HEXTD>#800080</HEXTD>
-              <RGBTD>128, 0, 128</RGBTD>
-            </tr>
-            <tr>
-              <ColorTD color="Red" colorTitle="#FFFFFF">
-                Red
-              </ColorTD>
-              <HEXTD>#FF0000</HEXTD>
-              <RGBTD>255, 0, 0</RGBTD>
-            </tr>
-            <tr>
-              <ColorTD color="Maroon" colorTitle="#FFFFFF">
-                Maroon
-              </ColorTD>
-              <HEXTD>#800000</HEXTD>
-              <RGBTD>128, 0, 0</RGBTD>
-            </tr>
-          </Tbody>
-        </table>
-      </WrapperTable>
-    </div>
+      </PrimaryTable>
+      <PrimaryTableTwo>
+        <Tbody>
+          <tr>
+            <ColorTD color="Fuchsia" colorTitle="#FFFFFF">
+              Fuchsia
+            </ColorTD>
+            <HEXTD>#FF00FF</HEXTD>
+            <RGBTD>255, 0, 255</RGBTD>
+          </tr>
+          <tr>
+            <ColorTD color="Purple" colorTitle="#FFFFFF">
+              Purple
+            </ColorTD>
+            <HEXTD>#800080</HEXTD>
+            <RGBTD>128, 0, 128</RGBTD>
+          </tr>
+          <tr>
+            <ColorTD color="Red" colorTitle="#FFFFFF">
+              Red
+            </ColorTD>
+            <HEXTD>#FF0000</HEXTD>
+            <RGBTD>255, 0, 0</RGBTD>
+          </tr>
+          <tr>
+            <ColorTD color="Maroon" colorTitle="#FFFFFF">
+              Maroon
+            </ColorTD>
+            <HEXTD>#800000</HEXTD>
+            <RGBTD>128, 0, 0</RGBTD>
+          </tr>
+        </Tbody>
+      </PrimaryTableTwo>
+    </WrapperTableColor>
   );
 };

@@ -1,12 +1,23 @@
 import {
+  TextColorHTML,
+  TextHTML,
+  TitlColorHTML,
+  TitlPrimaryColors,
+  TitlTableColors,
+  TitleHTML,
   WraperColorHtml,
   WraperColorsTable,
+  WraperColumn,
+  WraperColumnThree,
+  WraperColumnTwo,
   WraperPrimareColors,
   WraperTablePrimareColors,
+  WrapperTextHTML,
+  WrapperHTML,
 } from './ColorHtml.styled';
 import { PrimaryСolorsFirstTable } from '../../components/table/primaryСolors/PrimaryСolorsFirstTable';
 import { PrimaryСolorsTwoTable } from '../../components/table/primaryСolors/PrimaryСolorsTwoTable';
-import { TableTemplate } from 'components/table/primaryСolors/tableTemplate/TableTemplate';
+import { TableTemplate } from 'components/table/tableTemplate/TableTemplate';
 import {
   yellow_tones,
   orange_tones,
@@ -23,60 +34,65 @@ import {
 const ColorHtml = () => {
   return (
     <WraperColorHtml>
-      <h2>HTML ЦВЕТА</h2>
-      <p>
-        На данной странице представлены специальные ключевые слова, которые
-        можно применять для обозначения того или иного цвета на интернет сайтах,
-        и при разработке на языках программирования для Web, таких как HTML,
-        CSS, JavaScript, Flash, и др. В ранних спецификациях W3C было определено
-        всего 16 ключевых цветов. В более поздних спецификациях дополнительно
-        было определено ещё 130 различных названий цветов. Следующая таблица
-        содержит имена, и образцы цветов, которые ассоциируются с этими именами.
-      </p>
-      <h2>ТАБЛИЦА HTML ЦВЕТОВ</h2>
-      <p>
-        Имена цветов в HTML не чувствительны к регистру, и могут записываться в
-        любой форме Также стоит отметить, что имея 147 различных ключевых слов
-        (17 старых и 130 новых), не все цвета в этом списке уникальны. Некоторые
-        имена обозначают один и тот же цвет. Так, например, и Grey, и Gray
-        обозначают 50-процентный серый цвет #808080, а Magenta — это лишь
-        синоним HTML цвета Fuchsia, и ссылается на шестнадцатеричный код цвета
-        #FF00FF.
-      </p>
+      <WrapperHTML>
+        <TitleHTML>HTML ЦВЕТА</TitleHTML>
+        <TextHTML>
+          На данной странице представлены специальные ключевые слова, которые
+          можно применять для обозначения того или иного цвета на интернет
+          сайтах, и при разработке на языках программирования для Web, таких как
+          HTML, CSS, JavaScript, Flash, и др. В ранних спецификациях W3C было
+          определено всего 16 ключевых цветов. В более поздних спецификациях
+          дополнительно было определено ещё 130 различных названий цветов.
+          Следующая таблица содержит имена, и образцы цветов, которые
+          ассоциируются с этими именами.
+        </TextHTML>
+      </WrapperHTML>
+      <WrapperTextHTML>
+        <TitlColorHTML>ТАБЛИЦА HTML ЦВЕТОВ</TitlColorHTML>
+        <TextColorHTML>
+          Имена цветов в HTML не чувствительны к регистру, и могут записываться
+          в любой форме Также стоит отметить, что имея 147 различных ключевых
+          слов (17 старых и 130 новых), не все цвета в этом списке уникальны.
+          Некоторые имена обозначают один и тот же цвет. Так, например, и Grey,
+          и Gray обозначают 50-процентный серый цвет #808080, а Magenta — это
+          лишь синоним HTML цвета Fuchsia, и ссылается на шестнадцатеричный код
+          цвета #FF00FF.
+        </TextColorHTML>
+      </WrapperTextHTML>
+      <TitlPrimaryColors>Основные цвета:</TitlPrimaryColors>
       <WraperPrimareColors>
-        <h3>Основные цвета:</h3>
         <WraperTablePrimareColors>
           <PrimaryСolorsFirstTable />
           <PrimaryСolorsTwoTable />
         </WraperTablePrimareColors>
       </WraperPrimareColors>
       <WraperColorsTable>
-        <div>
-          <h3>Красные тона:</h3>
+        <WraperColumn>
+          <TitlTableColors>Красные тона:</TitlTableColors>
           <TableTemplate colorPalette={red_tones} />
-          <h3>Розовый тона:</h3>
+          <TitlTableColors>Розовый тона:</TitlTableColors>
           <TableTemplate colorPalette={pink_tones} />
-          <h3>Оранжевый тона:</h3>
+          <TitlTableColors>Оранжевый тона:</TitlTableColors>
           <TableTemplate colorPalette={orange_tones} />
-          <h3>Желтые тона:</h3>
+          <TitlTableColors>Желтые тона:</TitlTableColors>
           <TableTemplate colorPalette={yellow_tones} />
-          <h3>Коричневые тона:</h3>
+          <TitlTableColors>Коричневые тона:</TitlTableColors>
           <TableTemplate colorPalette={brown_tones} />
-        </div>
-        <div>
-          <h3>Зеленые тона:</h3>
+        </WraperColumn>
+        <WraperColumnTwo>
+          <TitlTableColors>Зеленые тона:</TitlTableColors>
           <TableTemplate colorPalette={green_tones} />
-          <h3>Синие тона:</h3>
+          <TitlTableColors>Синие тона:</TitlTableColors>
           <TableTemplate colorPalette={blue_tones} />
-        </div>
-        <div>
-          <h3>Фиолетовые тона:</h3>
+        </WraperColumnTwo>
+        <WraperColumnThree>
+          <TitlTableColors>Фиолетовые тона:</TitlTableColors>
           <TableTemplate colorPalette={purple_tones} />
-          <h3>Белые тона:</h3>
+          <TitlTableColors>Белые тона:</TitlTableColors>
           <TableTemplate colorPalette={white_tones} />
-          <h3>Серые тона:</h3>
+          <TitlTableColors>Серые тона:</TitlTableColors>
           <TableTemplate colorPalette={grey_tones} />
-        </div>
+        </WraperColumnThree>
       </WraperColorsTable>
     </WraperColorHtml>
   );
