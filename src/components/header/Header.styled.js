@@ -5,6 +5,7 @@ border-bottom: 1px solid #333333;
 `
 
 export const WraperHeader = styled.div`
+max-width:1150px;
 padding-left: 147px;
 padding-right: 147px;
 display:flex;

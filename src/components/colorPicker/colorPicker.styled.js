@@ -2,17 +2,16 @@ import styled from 'styled-components';
 
 
 export const WrapperColorPickerSection = styled.div`
-/* padding-left: 147px;
-padding-right: 147px; */
+background-color: #333333;
+padding-bottom: 53px;
+padding-left:87px;
+padding-right:110px;
+padding-top: 38px;
 `
 
 export const WrapperColorPicker = styled.div`
 display:flex;
-background-color: #F5F5F5;
-padding-top: 38px;
-padding-left:87px;
-padding-right:110px;
-padding-bottom:53px;
+padding-bottom:55px;
 `
 
 export const WrapperHue = styled.div`

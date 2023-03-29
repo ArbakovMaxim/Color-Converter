@@ -7,7 +7,7 @@ import {
   InputColor,
   WrraperInput,
   WrraperListColum,
-  WrraperOnverter,
+  WrraperConverter,
   WrraperRightsBtnGroup,
 } from './ConverterColor.styled';
 import { ColorsInputPicker } from '../colorsInputPicker/colorsInputPicker';
@@ -349,21 +349,49 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
   ]);
 
   return (
-    <WrraperOnverter>
+    <WrraperConverter>
       <div>
-        <BtnPicker id="flowerSystem" onClick={activ}>
+        <BtnPicker
+          backgroundColor={activMenu === 'flowerSystem' ? '#D9D9D9' : '#3F3F40'}
+          color={activMenu === 'flowerSystem' ? '#333333' : '#D9D9D9'}
+          id="flowerSystem"
+          onClick={activ}
+        >
           {flowerSystem}
         </BtnPicker>
-        <BtnPicker id="flowerSystemSecond" onClick={activ}>
+        <BtnPicker
+          backgroundColor={
+            activMenu === 'flowerSystemSecond' ? '#D9D9D9' : '#3F3F40'
+          }
+          color={activMenu === 'flowerSystemSecond' ? '#333333' : '#D9D9D9'}
+          id="flowerSystemSecond"
+          onClick={activ}
+        >
           {flowerSystemSecond}
         </BtnPicker>
-        <BtnPicker id="flowerSystemThird" onClick={activ}>
+        <BtnPicker
+          backgroundColor={
+            activMenu === 'flowerSystemThird' ? '#D9D9D9' : '#3F3F40'
+          }
+          color={activMenu === 'flowerSystemThird' ? '#333333' : '#D9D9D9'}
+          id="flowerSystemThird"
+          onClick={activ}
+        >
           {flowerSystemThird}
         </BtnPicker>
-        <BtnPicker id="flowerSystemFourth" onClick={activ}>
+        <BtnPicker
+          backgroundColor={
+            activMenu === 'flowerSystemFourth' ? '#D9D9D9' : '#3F3F40'
+          }
+          color={activMenu === 'flowerSystemFourth' ? '#333333' : '#D9D9D9'}
+          id="flowerSystemFourth"
+          onClick={activ}
+        >
           {flowerSystemFourth}
         </BtnPicker>
-        <Btn onClick={activListColum}>p</Btn>
+        <Btn onClick={activListColum}>
+          {isVisible ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </Btn>
         <WrraperInput>
           {isVisible ? (
             <WrraperListColum>
@@ -386,19 +414,69 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
         </WrraperInput>
       </div>
       <WrraperRightsBtnGroup>
-        <BtnPicker id="rightsFlowerSystem" onClick={rightsActiv}>
+        <BtnPicker
+          backgroundColor={
+            rightsActivMenu === 'rightsFlowerSystem' ? '#D9D9D9' : '#3F3F40'
+          }
+          color={
+            rightsActivMenu === 'rightsFlowerSystem' ? '#333333' : '#D9D9D9'
+          }
+          id="rightsFlowerSystem"
+          onClick={rightsActiv}
+        >
           {rightsFlowerSystem}
         </BtnPicker>
-        <BtnPicker id="rightsFlowerSystemSecond" onClick={rightsActiv}>
+        <BtnPicker
+          backgroundColor={
+            rightsActivMenu === 'rightsFlowerSystemSecond'
+              ? '#D9D9D9'
+              : '#3F3F40'
+          }
+          color={
+            rightsActivMenu === 'rightsFlowerSystemSecond'
+              ? '#333333'
+              : '#D9D9D9'
+          }
+          id="rightsFlowerSystemSecond"
+          onClick={rightsActiv}
+        >
           {rightsFlowerSystemSecond}
         </BtnPicker>
-        <BtnPicker id="rightsFlowerSystemThird" onClick={rightsActiv}>
+        <BtnPicker
+          backgroundColor={
+            rightsActivMenu === 'rightsFlowerSystemThird'
+              ? '#D9D9D9'
+              : '#3F3F40'
+          }
+          color={
+            rightsActivMenu === 'rightsFlowerSystemThird'
+              ? '#333333'
+              : '#D9D9D9'
+          }
+          id="rightsFlowerSystemThird"
+          onClick={rightsActiv}
+        >
           {rightsFlowerSystemThird}
         </BtnPicker>
-        <BtnPicker id="rightsFlowerSystemFourth" onClick={rightsActiv}>
+        <BtnPicker
+          backgroundColor={
+            rightsActivMenu === 'rightsFlowerSystemFourth'
+              ? '#D9D9D9'
+              : '#3F3F40'
+          }
+          color={
+            rightsActivMenu === 'rightsFlowerSystemFourth'
+              ? '#333333'
+              : '#D9D9D9'
+          }
+          id="rightsFlowerSystemFourth"
+          onClick={rightsActiv}
+        >
           {rightsFlowerSystemFourth}
         </BtnPicker>
-        <Btn onClick={rightsActivListColum}>p</Btn>
+        <Btn onClick={rightsActivListColum}>
+          {isVisibleRights ? <span>&#9650;</span> : <span>&#9660;</span>}
+        </Btn>
         <WrraperInput>
           {isVisibleRights ? (
             <WrraperListColum>
@@ -413,52 +491,8 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
           />
         </WrraperInput>
       </WrraperRightsBtnGroup>
-    </WrraperOnverter>
+    </WrraperConverter>
   );
 };
 
 export default ConverterColor;
-
-// ) : null}
-// {activMenu === 'flowerSystemSecond' ? (
-//   <ColorsInputPicker
-//     activFlower={activFlower}
-//     colorInputValue={colorInputValue}
-//     setInput={setInputActiv}
-//     setInputSecond={setInputActivSecond}
-//     setInputThird={setInputActivThird}
-//     setInputFourth={setInputActivFourth}
-//     input={activInput}
-//     inputSecond={activInputSecond}
-//     inputThird={activInputThird}
-//     inputFourth={activInputFourth}
-//   />
-// ) : null}
-// {activMenu === 'flowerSystemThird' ? (
-//   <ColorsInputPicker
-//     activFlower={activFlower}
-//     colorInputValue={colorInputValue}
-//     setInput={setInputActiv}
-//     setInputSecond={setInputActivSecond}
-//     setInputThird={setInputActivThird}
-//     setInputFourth={setInputActivFourth}
-//     input={activInput}
-//     inputSecond={activInputSecond}
-//     inputThird={activInputThird}
-//     inputFourth={activInputFourth}
-//   />
-// ) : null}
-// {activMenu === 'flowerSystemFourth' ? (
-//   <ColorsInputPicker
-//     activFlower={activFlower}
-//     colorInputValue={colorInputValue}
-//     setInput={setInputActiv}
-//     setInputSecond={setInputActivSecond}
-//     setInputThird={setInputActivThird}
-//     setInputFourth={setInputActivFourth}
-//     input={activInput}
-//     inputSecond={activInputSecond}
-//     inputThird={activInputThird}
-//     inputFourth={activInputFourth}
-//   />
-// ) : null}

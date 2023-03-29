@@ -12,6 +12,7 @@ import {
 } from './colorPicker.styled';
 import ConverterColor from 'components/Converter/ConverterColor';
 import Color from 'js/color';
+import ColorReference from 'components/colorReference/ColorReference';
 
 const ColorPicker = () => {
   const [hsva, setHsva] = useState({ h: 25, s: 25, v: 25, a: 1 });
@@ -67,6 +68,7 @@ const ColorPicker = () => {
           saturation={hsva}
         />
       </WrapperColorPickerSection>
+      <ColorReference />
     </Section>
   );
 };

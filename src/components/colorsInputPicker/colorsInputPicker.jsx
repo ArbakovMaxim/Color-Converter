@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import {
   Input,
   InputHexOrName,
+  LastInput,
   Tekst,
   WrapperInput,
   WrapperNameColor,
@@ -78,17 +79,14 @@ export const ColorsInputPicker = ({
                 <Tekst>{namePallete[3] || ''}</Tekst>
               </WrapperNameColor>
               <Input
-                // type="Number"
                 onChange={event =>
                   setInputFourth(event.target.value.replace(/[^0-9 .]/g, ''))
                 }
                 value={inputFourth}
-                // min="0"
-                // max="1"
               />
             </>
           ) : null}
-          <Input readOnly value="100%" />
+          <LastInput readOnly value="100%" />
         </WrapperInput>
       )}
     </div>

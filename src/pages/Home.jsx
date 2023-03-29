@@ -1,5 +1,5 @@
 import { Wraper } from './Home.styled';
-import Main from 'main/Main';
+import Main from 'components/main/Main';
 
 const Home = () => {
   return (
