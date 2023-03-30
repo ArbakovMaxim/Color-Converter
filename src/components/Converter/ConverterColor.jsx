@@ -9,6 +9,9 @@ import {
   WrraperListColum,
   WrraperConverter,
   WrraperRightsBtnGroup,
+  BtnCopy,
+  WrraperArrows,
+  WrraperCopy,
 } from './ConverterColor.styled';
 import { ColorsInputPicker } from '../colorsInputPicker/colorsInputPicker';
 import { columnConvert } from 'util/ColumnConvert';
@@ -332,6 +335,29 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
       `${activInput},${activInputSecond},${activInputThird},${activInputFourth}`
     );
   }
+
+  function copyInput() {
+    navigator.clipboard
+      .writeText(colorInputValue)
+      .then(() => {
+        console.log('Переменная скопирована в буфер обмена');
+      })
+      .catch(error => {
+        console.error('Ошибка копирования переменной: ', error);
+      });
+  }
+
+  function rightsCopyInput() {
+    navigator.clipboard
+      .writeText(rightsInput)
+      .then(() => {
+        console.log('Переменная скопирована в буфер обмена');
+      })
+      .catch(error => {
+        console.error('Ошибка копирования переменной: ', error);
+      });
+  }
+
   useEffect(() => {
     inputToSetValue(
       activInput,
@@ -411,8 +437,12 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
             inputThird={activInputThird}
             inputFourth={activInputFourth}
           />
+          <WrraperCopy>
+            <BtnCopy onClick={copyInput}>&#10066;</BtnCopy>
+          </WrraperCopy>
         </WrraperInput>
       </div>
+      <WrraperArrows>&#8646;</WrraperArrows>
       <WrraperRightsBtnGroup>
         <BtnPicker
           backgroundColor={
@@ -489,6 +519,9 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
             readOnly
             value={rightsInput}
           />
+          <WrraperCopy>
+            <BtnCopy onClick={rightsCopyInput}>&#10066;</BtnCopy>
+          </WrraperCopy>
         </WrraperInput>
       </WrraperRightsBtnGroup>
     </WrraperConverter>

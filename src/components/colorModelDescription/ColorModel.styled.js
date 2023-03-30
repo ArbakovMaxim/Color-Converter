@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 export const WrapperColorModelDescription = styled.div`
+max-width:1092px;
 padding: 40px 24px 35px 54px;
 background-color: #333333;
+
+  @media (max-width: 500px) {
+    padding: 26px 26px 16px 30px;
+  }
 `
 export const TextColorModelDescription = styled.p`
 color: #FFFFFF;
@@ -10,18 +15,28 @@ font-weight: 300;
 font-size: 16px;
 line-height: 25px;
 margin-bottom:25px;
+@media (max-width: 500px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 `
 export const WrapperHTMLlDescription = styled.div`
 max-height:210px;
 max-width:675px;
 background-color: #424243;
 padding: 36px 23px 41px 44px;
+@media (max-width: 500px) {
+    padding: 27px 13px 19px 15px;
+  }
 `
 
 export const WrapperListСlue = styled.div`
 max-height:210px;
 max-width:675px;
 margin-top:65px;
+@media (max-width: 500px) {
+   display:none;
+  }
 `
 
 export const SpanH = styled.span`
@@ -38,6 +53,11 @@ font-weight: 400;
 font-size: 18px;
 line-height: 35px;
 color: #FFFFFF;
+
+@media (max-width: 500px) {
+    font-size: 12px;
+    line-height: 18px;
+  }
 `
 export const ListСlue = styled.ol`
 font-weight: 300;

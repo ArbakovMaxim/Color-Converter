@@ -6,7 +6,7 @@ padding-bottom:78px;
 `
 
 export const WrapperButtonGroup = styled.div`
-margin-left:17px;
+max-width:1170px;
 padding-top:30px;
 padding-bottom:4px;
 `
@@ -19,6 +19,9 @@ font-weight: 500;
 font-size: 30px;
 line-height: 30px;
 color: #FFFFFF;
+@media (max-width: 500px) {
+    font-size: 20px;
+  }
 `
 export const TextColorModel = styled.p`
 text-align:center;
@@ -28,6 +31,10 @@ line-height: 25px;
 color: #FFFFFF;
 padding-left:75px;
 padding-right:75px;
+@media (max-width: 500px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
 `
 
 export const Button = styled.button`
@@ -36,6 +43,10 @@ color: ${(props) => props.color};
 border-radius: 10px 10px 0px 0px;
 width:150px;
 height:55px;
+@media (max-width: 786px) {
+    width:105px;
+    height:40px;
+  }
 `
 
 export const ListBtn = styled.ul`

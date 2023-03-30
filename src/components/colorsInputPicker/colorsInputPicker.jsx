@@ -4,6 +4,7 @@ import {
   InputHexOrName,
   LastInput,
   Tekst,
+  WrapperColorPicker,
   WrapperInput,
   WrapperNameColor,
 } from './colorsInputPicker.styled';
@@ -33,7 +34,7 @@ export const ColorsInputPicker = ({
   }, [activFlower]);
 
   return (
-    <div>
+    <WrapperColorPicker>
       {nameOrHex ? (
         <WrapperInput>
           <WrapperNameColor>
@@ -89,6 +90,6 @@ export const ColorsInputPicker = ({
           <LastInput readOnly value="100%" />
         </WrapperInput>
       )}
-    </div>
+    </WrapperColorPicker>
   );
 };

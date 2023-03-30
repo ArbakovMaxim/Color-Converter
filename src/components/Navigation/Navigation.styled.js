@@ -2,7 +2,9 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 export const NavigationLink = styled(NavLink)`
-
+font-weight: 400;
+font-size: 18px;
+line-height: 30px;
   text-decoration:none;
   color: black;
 `;

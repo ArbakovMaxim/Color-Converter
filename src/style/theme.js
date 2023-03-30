@@ -1,9 +1,17 @@
-export const theme = {
-  colors: {
+import { useState } from 'react';
+import lightTheme from './lightTheme';
+import darkTheme from './darkTheme';
 
-    basicWhite: '#f5fffa',
-    secondWhite: '#F5F5F5',
-    basicText: '#424243',
-    secondText: '#333333',
-  },
+
+export const useTheme = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+  return {
+    theme: isDarkMode ? lightTheme : darkTheme,
+    toggleTheme,
+  };
 };
+
