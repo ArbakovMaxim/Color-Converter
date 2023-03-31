@@ -5,7 +5,7 @@ export const Wraper = styled.div`
   height-max: 100%;
   padding-left: 147px;
     padding-right: 147px;
-background-color: #424343;
+background-color: ${props => props.theme.backgroundBasic};
 @media (max-width: 1050px) {
     padding-left: 50px;
     padding-right: 50px;

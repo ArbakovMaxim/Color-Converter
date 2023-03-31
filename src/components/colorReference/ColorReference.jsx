@@ -10,10 +10,11 @@ import {
   WrapperTitleColorModel,
 } from './ColorReference.styled';
 import { activColorModel } from 'util/ActivElement/activColorModel';
+import useTheme from '../../style/useTheme';
 
 const ColorReference = () => {
   const [activBTN, setActivBTN] = useState('RGB');
-
+  const { theme } = useTheme();
   const ActiveModel = activColorModel(activBTN);
 
   return (
@@ -30,8 +31,10 @@ const ColorReference = () => {
         <ListBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'RGB' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'RGB' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'RGB' ? theme.btnActive : theme.btn}
+              color={activBTN === 'RGB' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'RGB' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('RGB');
               }}
@@ -41,8 +44,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'RGBA' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'RGBA' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'RGBA' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'RGBA' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'RGBA' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('RGBA');
               }}
@@ -52,8 +61,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HEX' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HEX' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HEX' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HEX' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HEX' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HEX');
               }}
@@ -63,8 +74,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'CMYK' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'CMYK' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'CMYK' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'CMYK' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'CMYK' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('CMYK');
               }}
@@ -74,8 +91,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'Name' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'RGBA' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'Name' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'Name' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'Name' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('Name');
               }}
@@ -85,8 +108,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSL' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSL' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HSL' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HSL' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HSL' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSL');
               }}
@@ -96,8 +121,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSLA' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSLA' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'HSLA' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'HSLA' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'HSLA' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSLA');
               }}
@@ -107,8 +138,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSIA' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSIA' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'HSIA' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'HSIA' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'HSIA' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSIA');
               }}
@@ -118,8 +155,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HLSA' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HLSA' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'HLSA' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'HLSA' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'HLSA' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HLSA');
               }}
@@ -129,8 +172,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSI' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSI' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HSI' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HSI' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HSI' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSI');
               }}
@@ -140,8 +185,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HLS' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HLS' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HLS' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HLS' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HLS' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HLS');
               }}
@@ -151,8 +198,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSV' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSV' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HSV' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HSV' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HSV' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSV');
               }}
@@ -162,8 +211,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HSB' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HSB' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'HSB' ? theme.btnActive : theme.btn}
+              color={activBTN === 'HSB' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'HSB' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HSB');
               }}
@@ -173,8 +224,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'Safe' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'Safe' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'Safe' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'Safe' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'Safe' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('Safe');
               }}
@@ -184,8 +241,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'CMY' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'CMY' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'CMY' ? theme.btnActive : theme.btn}
+              color={activBTN === 'CMY' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'CMY' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('CMY');
               }}
@@ -195,8 +254,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'XYZ' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'XYZ' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'XYZ' ? theme.btnActive : theme.btn}
+              color={activBTN === 'XYZ' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'XYZ' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('XYZ');
               }}
@@ -206,8 +267,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'Yxy' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'Yxy' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'Yxy' ? theme.btnActive : theme.btn}
+              color={activBTN === 'Yxy' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'Yxy' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('Yxy');
               }}
@@ -217,8 +280,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'Lab' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'Lab' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'Lab' ? theme.btnActive : theme.btn}
+              color={activBTN === 'Lab' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'Lab' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('Lab');
               }}
@@ -228,8 +293,10 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'LCH' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'LCH' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={activBTN === 'LCH' ? theme.btnActive : theme.btn}
+              color={activBTN === 'LCH' ? theme.btnTextActive : theme.basicText}
+              border={activBTN === 'LCH' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('LCH');
               }}
@@ -239,8 +306,14 @@ const ColorReference = () => {
           </ItemBtn>
           <ItemBtn>
             <Button
-              backgroundColor={activBTN === 'HunterLab' ? '#D9D9D9' : '#3F3F40'}
-              color={activBTN === 'HunterLab' ? '#333333' : '#FFFFFF'}
+              theme={theme}
+              backgroundColor={
+                activBTN === 'HunterLab' ? theme.btnActive : theme.btn
+              }
+              color={
+                activBTN === 'HunterLab' ? theme.btnTextActive : theme.basicText
+              }
+              border={activBTN === 'HunterLab' ? 'transparent' : theme.border}
               onClick={() => {
                 setActivBTN('HunterLab');
               }}

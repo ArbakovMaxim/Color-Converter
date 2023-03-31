@@ -8,12 +8,12 @@ export const WrapperNameColor = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #D9D9D9;
+  background-color:${props => props.theme.backgroundSecond};
   width:25px;
   max-width:100%;
   height:45px;
-  border:2px;
-  padding-top: 5px;
+  border:${props => props.theme.border};
+  margin-top:1px;
   &:not(:first-child) {
     margin-left:10px;
     @media (max-width: 500px) {
@@ -23,12 +23,19 @@ export const WrapperNameColor = styled.div`
 `
 
 export const Input = styled.input`
-width:55px;
+border:${props => props.theme.border};
+color:${props => props.theme.basicText};
+background-color:${props => props.theme.backgroundBasic};
+padding-left:10px;
+width:45px;
 max-width:100%;
 height:45px;
 `
 
 export const LastInput = styled.input`
+border:${props => props.theme.border};
+color:${props => props.theme.basicText};
+background-color:${props => props.theme.backgroundBasic};
 margin-left:10px;
 width:36px;
 max-width:100%;
@@ -36,12 +43,16 @@ height:45px;
 `
 
 export const InputHexOrName = styled.input`
-width:380px;
+border:${props => props.theme.border};
+color:${props => props.theme.basicText};
+background-color:${props => props.theme.backgroundBasic};
+padding-left:10px;
+width:363px;
 max-width:100%;
 height:45px;`
 
 export const Tekst = styled.p`
-color:#2B2B2B;
+color: ${props => props.theme.secondText};
 `
 
 export const WrapperColorPicker = styled.div`

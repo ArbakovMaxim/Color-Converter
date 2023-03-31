@@ -19,6 +19,7 @@ z-index: 2
 export const BtnPicker = styled.button`
 background-color: ${(props) => props.backgroundColor};
 color: ${(props) => props.color};
+border: ${(props) => props.border};
 width: 100px;
 max-width:100%;
 height: 40px;
@@ -38,7 +39,9 @@ border-top-right-radius:10px;
     `
 
 export const Btn = styled.button`
-background-color:#D9D9D9;
+background-color: ${(props) => props.backgroundColor};
+color: ${(props) => props.color};
+border: ${(props) => props.border};
 width: 27px;
 height: 40px;
 padding: 0;
@@ -50,14 +53,18 @@ export const BtnCopy = styled.button`
 position: absolute;
 margin-left:10px;
 cursor: pointer;
-border: none;
-color: #fff;
-background-color: #333333;
+border:${props => props.theme.border};
+color:${props => props.theme.basicText};
+background-color:${props => props.theme.backgroundBasic};
 `
 
 export const InputColor = styled.input`
+border:${props => props.theme.border};
+color:${props => props.theme.basicText};
+background-color:${props => props.theme.backgroundBasic};
+padding-left:10px;
 display:block;
-width: 390px;
+width: 388px;
 max-width:100%;
 height: 45px;
   `
@@ -69,7 +76,7 @@ justify-content: center;
 align-items: center;
 width: 27px;
 height: 40px;
-color: #fff;
+color:${props => props.theme.basicText};
 @media (max-width: 500px) {
   margin-left:auto;
   margin-right:auto;

@@ -3,10 +3,9 @@ import styled from 'styled-components';
 export const WraperColorHtml = styled.div`
   width-max:1440px;
   height-max: 100%;
-  background-color: #f5fffa;
+  background-color:  ${props => props.theme.backgroundBasic};
   padding-left: 147px;
   padding-right: 147px;
-  background-color: #424343;
   @media (max-width: 1050px) {
     padding-left: 50px;
     padding-right: 50px;
@@ -25,14 +24,14 @@ export const TitleHTML = styled.h1`
   font-weight: 500;
   font-size: 30px;
   line-height: 30px;
-  color: #FFFFFF;
+  color:${props => props.theme.basicText};
 `;
 
 export const TextHTML = styled.p`
     font-weight: 300;
     font-size: 18px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
     `;
 
 export const WrapperHTML = styled.div`
@@ -56,7 +55,7 @@ export const TitlColorHTML = styled.h2`
     font-weight: 500;
     font-size: 30px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
 `;
 
 export const TextColorHTML = styled.p`
@@ -64,7 +63,7 @@ export const TextColorHTML = styled.p`
     font-weight: 300;
     font-size: 18px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
 `;
 
 export const TitlPrimaryColors = styled.h3`
@@ -72,7 +71,7 @@ export const TitlPrimaryColors = styled.h3`
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
     margin-bottom:7px;
 `;
 
@@ -80,7 +79,7 @@ export const TitlTableColors = styled.h3`
     font-weight: 400;
     font-size: 20px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
     margin-bottom:7px;
 `;
 

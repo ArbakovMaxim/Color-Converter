@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const WraperColorWebSafe = styled.div`
   width-max:1440px;
   height-max: 100%;
-  background-color: #424343;
+  background-color:${props => props.theme.backgroundBasic};
   padding-left: 147px;
   padding-right: 147px;
   @media (max-width: 1050px) {
@@ -41,14 +41,14 @@ export const TitleSafe = styled.h1`
   font-weight: 500;
   font-size: 30px;
   line-height: 30px;
-  color: #FFFFFF;
+  color: ${props => props.theme.basicText};
 `;
 
 export const TextSafe = styled.p`
     font-weight: 300;
     font-size: 18px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
     `
 
 export const TitleTable = styled.h2`
@@ -56,7 +56,7 @@ export const TitleTable = styled.h2`
     font-weight: 500;
     font-size: 30px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
 `;
 
 export const TextTable = styled.p`
@@ -64,7 +64,7 @@ export const TextTable = styled.p`
     font-weight: 300;
     font-size: 18px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: ${props => props.theme.basicText};
 `;
 
 export const ColorBox = styled.div`
@@ -81,7 +81,7 @@ export const List = styled.ul`
   margin-left:-30px;
   padding: 21px 33px;
   list-style: none;
-  background-color:#333333;
+  background-color:${props => props.theme.backgroundSecond};
 
   @media (max-width: 867px) {
     justify-content:center;
@@ -98,7 +98,7 @@ export const ListItem = styled.li`
   height: 65px;
   margin-left:30px;
   border-radius: 4px;
-  background: #333333;;
+  background-color:${props => props.theme.backgroundSecond};
   margin-bottom: 0.5rem;
 
   @media (max-width: 867px) {
@@ -109,9 +109,7 @@ export const ListItem = styled.li`
 
 export const HexTitle = styled.p`
     width:30px;
-    color: #FFFFFF;
-    /* background: #333333; */
-    
+    color:${props => props.theme.secondText};
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
@@ -119,9 +117,7 @@ export const HexTitle = styled.p`
 
 export const NameTitle = styled.p`
     width:30px;
-    color: #FFFFFF;
-    /* background: #333333; */
-
+    color:${props => props.theme.secondText};
     font-weight: 400;
     font-size: 12px;
     line-height: 12px;
@@ -129,11 +125,12 @@ export const NameTitle = styled.p`
 
 export const ColorHEX = styled.p`
     text-align: center;
-    background-color: #424243;
     width: 90px;
     padding-top: 6px;
     padding-bottom: 6px;
-    color: #FFFFFF;
+    background-color: ${props => props.theme.backgroundBasic};
+    color: ${props => props.theme.basicText};
+    border:${props => props.theme.border};
 
     font-weight: 300;
     font-size: 12px;
@@ -143,10 +140,11 @@ export const ColorHEX = styled.p`
 export const ColorRGB = styled.p`
     text-align: center;
     width: 90px;
-    background-color: #424243;
     padding-top: 6px;
     padding-bottom: 6px;
-    color: #FFFFFF;
+    background-color: ${props => props.theme.backgroundBasic};
+    color: ${props => props.theme.basicText};
+    border:${props => props.theme.border};
 
     font-weight: 300;
     font-size: 12px;

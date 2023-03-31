@@ -1,7 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
-import { ThemeProvider } from 'styled-components';
-import { useTheme } from './style/theme';
+import ThemeWrapper from './style/theme';
 
 const Layout = lazy(() => import('./layout/Layout'));
 const Home = lazy(() => import('./pages/Home'));
@@ -10,10 +9,8 @@ const ColorWebSafe = lazy(() => import('./pages/ColorWebSafe/ColorWebSafe'));
 const PageNotFound = lazy(() => import('./pages/PageNotFound/PageNotFound'));
 
 export const App = () => {
-  const { theme } = useTheme();
-  console.log(theme);
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeWrapper>
       <Suspense fallback={<h1>Loading....</h1>}>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -24,6 +21,6 @@ export const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
       </Suspense>
-    </ThemeProvider>
+    </ThemeWrapper>
   );
 };

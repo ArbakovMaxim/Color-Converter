@@ -30,6 +30,7 @@ import { activSetInputsThird } from 'util/ActivElement/activSetInputsThird';
 import { activSetInputsFourth } from 'util/ActivElement/activSetInputsFourth';
 import { ActivInputNameOrHEX } from 'util/ActivElement/activInputNameOrHEX';
 import { activSetInputNameOrHEX } from 'util/ActivElement/ActivSetInputNameOrHEX';
+import useTheme from '../../style/useTheme';
 
 const ConverterColor = ({ color, bgColor, saturation }) => {
   //////input set
@@ -84,6 +85,8 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
     useState('CMYK');
   const [rightsFlowerSystemFourth, setRightsFlowerSystemFourth] =
     useState('HSL');
+
+  const { theme } = useTheme();
 
   const activNameOrHEX = ActivInputNameOrHEX(
     activMenu,
@@ -378,44 +381,80 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
     <WrraperConverter>
       <div>
         <BtnPicker
-          backgroundColor={activMenu === 'flowerSystem' ? '#D9D9D9' : '#3F3F40'}
-          color={activMenu === 'flowerSystem' ? '#333333' : '#D9D9D9'}
+          theme={theme}
+          backgroundColor={
+            activMenu === 'flowerSystem' ? theme.btnActive : theme.btn
+          }
+          color={
+            activMenu === 'flowerSystem' ? theme.btnTextActive : theme.basicText
+          }
+          border={activMenu === 'flowerSystem' ? 'transparent' : theme.border}
           id="flowerSystem"
           onClick={activ}
         >
           {flowerSystem}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
-            activMenu === 'flowerSystemSecond' ? '#D9D9D9' : '#3F3F40'
+            activMenu === 'flowerSystemSecond' ? theme.btnActive : theme.btn
           }
-          color={activMenu === 'flowerSystemSecond' ? '#333333' : '#D9D9D9'}
+          color={
+            activMenu === 'flowerSystemSecond'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            activMenu === 'flowerSystemSecond' ? 'transparent' : theme.border
+          }
           id="flowerSystemSecond"
           onClick={activ}
         >
           {flowerSystemSecond}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
-            activMenu === 'flowerSystemThird' ? '#D9D9D9' : '#3F3F40'
+            activMenu === 'flowerSystemThird' ? theme.btnActive : theme.btn
           }
-          color={activMenu === 'flowerSystemThird' ? '#333333' : '#D9D9D9'}
+          color={
+            activMenu === 'flowerSystemThird'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            activMenu === 'flowerSystemThird' ? 'transparent' : theme.border
+          }
           id="flowerSystemThird"
           onClick={activ}
         >
           {flowerSystemThird}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
-            activMenu === 'flowerSystemFourth' ? '#D9D9D9' : '#3F3F40'
+            activMenu === 'flowerSystemFourth' ? theme.btnActive : theme.btn
           }
-          color={activMenu === 'flowerSystemFourth' ? '#333333' : '#D9D9D9'}
+          color={
+            activMenu === 'flowerSystemFourth'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            activMenu === 'flowerSystemFourth' ? 'transparent' : theme.border
+          }
           id="flowerSystemFourth"
           onClick={activ}
         >
           {flowerSystemFourth}
         </BtnPicker>
-        <Btn onClick={activListColum}>
+        <Btn
+          onClick={activListColum}
+          theme={theme}
+          backgroundColor={isVisible ? theme.btnActive : theme.btn}
+          color={isVisible ? theme.btnTextActive : theme.basicText}
+          border={isVisible ? 'transparent' : theme.border}
+        >
           {isVisible ? <span>&#9650;</span> : <span>&#9660;</span>}
         </Btn>
         <WrraperInput>
@@ -445,11 +484,21 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
       <WrraperArrows>&#8646;</WrraperArrows>
       <WrraperRightsBtnGroup>
         <BtnPicker
+          theme={theme}
           backgroundColor={
-            rightsActivMenu === 'rightsFlowerSystem' ? '#D9D9D9' : '#3F3F40'
+            rightsActivMenu === 'rightsFlowerSystem'
+              ? theme.btnActive
+              : theme.btn
           }
           color={
-            rightsActivMenu === 'rightsFlowerSystem' ? '#333333' : '#D9D9D9'
+            rightsActivMenu === 'rightsFlowerSystem'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            rightsActivMenu === 'rightsFlowerSystem'
+              ? 'transparent'
+              : theme.border
           }
           id="rightsFlowerSystem"
           onClick={rightsActiv}
@@ -457,15 +506,21 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
           {rightsFlowerSystem}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
             rightsActivMenu === 'rightsFlowerSystemSecond'
-              ? '#D9D9D9'
-              : '#3F3F40'
+              ? theme.btnActive
+              : theme.btn
           }
           color={
             rightsActivMenu === 'rightsFlowerSystemSecond'
-              ? '#333333'
-              : '#D9D9D9'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            rightsActivMenu === 'rightsFlowerSystemSecond'
+              ? 'transparent'
+              : theme.border
           }
           id="rightsFlowerSystemSecond"
           onClick={rightsActiv}
@@ -473,15 +528,21 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
           {rightsFlowerSystemSecond}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
             rightsActivMenu === 'rightsFlowerSystemThird'
-              ? '#D9D9D9'
-              : '#3F3F40'
+              ? theme.btnActive
+              : theme.btn
           }
           color={
             rightsActivMenu === 'rightsFlowerSystemThird'
-              ? '#333333'
-              : '#D9D9D9'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            rightsActivMenu === 'rightsFlowerSystemThird'
+              ? 'transparent'
+              : theme.border
           }
           id="rightsFlowerSystemThird"
           onClick={rightsActiv}
@@ -489,22 +550,34 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
           {rightsFlowerSystemThird}
         </BtnPicker>
         <BtnPicker
+          theme={theme}
           backgroundColor={
             rightsActivMenu === 'rightsFlowerSystemFourth'
-              ? '#D9D9D9'
-              : '#3F3F40'
+              ? theme.btnActive
+              : theme.btn
           }
           color={
             rightsActivMenu === 'rightsFlowerSystemFourth'
-              ? '#333333'
-              : '#D9D9D9'
+              ? theme.btnTextActive
+              : theme.basicText
+          }
+          border={
+            rightsActivMenu === 'rightsFlowerSystemFourth'
+              ? 'transparent'
+              : theme.border
           }
           id="rightsFlowerSystemFourth"
           onClick={rightsActiv}
         >
           {rightsFlowerSystemFourth}
         </BtnPicker>
-        <Btn onClick={rightsActivListColum}>
+        <Btn
+          onClick={rightsActivListColum}
+          theme={theme}
+          backgroundColor={isVisibleRights ? theme.btnActive : theme.btn}
+          color={isVisibleRights ? theme.btnTextActive : theme.basicText}
+          border={isVisibleRights ? 'transparent' : theme.border}
+        >
           {isVisibleRights ? <span>&#9650;</span> : <span>&#9660;</span>}
         </Btn>
         <WrraperInput>

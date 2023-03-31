@@ -6,7 +6,7 @@ font-weight: 400;
 font-size: 18px;
 line-height: 30px;
   text-decoration:none;
-  color: black;
+  color:${props => props.theme.basicText};
 `;
 
 export const NavigationItem = styled.li`

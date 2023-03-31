@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 export const TextStart = styled.p`
-color:#FFFFFF;
+color:${props => props.theme.basicText};
 font-weight: 300;
 font-size: 18px;
 line-height: 30px;

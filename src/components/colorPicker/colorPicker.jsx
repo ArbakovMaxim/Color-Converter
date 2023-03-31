@@ -54,7 +54,7 @@ const ColorPicker = () => {
           </WrapperHue>
           <WrappeSaturation>
             <Saturation
-              style={{ maxWidth: '100%', width: '582px', height: '225px' }}
+              style={{ maxWidth: '100%', width: '38vw', height: '225px' }}
               hsva={hsva}
               onChange={newColor => {
                 setHsva({ ...hsva, ...newColor, a: hsva.a });

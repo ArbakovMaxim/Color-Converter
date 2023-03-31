@@ -3,14 +3,15 @@ import styled from "styled-components";
 export const WrapperColorModelDescription = styled.div`
 max-width:1092px;
 padding: 40px 24px 35px 54px;
-background-color: #333333;
+background-color:${props => props.theme.backgroundSecond};
+border:${props => props.theme.border};
 
   @media (max-width: 500px) {
     padding: 26px 26px 16px 30px;
   }
 `
 export const TextColorModelDescription = styled.p`
-color: #FFFFFF;
+color: ${props => props.theme.secondText};
 font-weight: 300;
 font-size: 16px;
 line-height: 25px;
@@ -64,14 +65,14 @@ font-weight: 300;
 font-size: 16px;
 line-height: 25px;
 padding-left:18px;
-color: #FFFFFF;
+color: ${props => props.theme.secondText};
 `
 export const TextСlue = styled.h3`
 margin-bottom: 20px;
 font-weight: 400;
 font-size: 18px;
 line-height: 35px;
-color: #FFFFFF;
+color: ${props => props.theme.secondText};
 `
 
 

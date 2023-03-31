@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const WrapperTableColor = styled.div`
-background-color:#333333;
+background-color:${props => props.theme.backgroundSecond};
 margin-bottom:32px;
 `;
 
@@ -20,16 +20,18 @@ line-height: 18px;
 text-align: center;
 width:83px;
 height:30px;
-background-color: #424243;
-color: #FFFFFF;
+background-color: ${props => props.theme.backgroundBasic};
+color: ${props => props.theme.basicText};
+border:${props => props.theme.border};
 `;
 
 export const RGBTD = styled.td`
 text-align: center;
 width:90px;
 height:30px;
-background-color: #424243;
-color: #FFFFFF;
+background-color: ${props => props.theme.backgroundBasic};
+color: ${props => props.theme.basicText};
+border:${props => props.theme.border};
 font-weight: 300;
 font-size: 12px;
 line-height: 18px;
@@ -37,7 +39,7 @@ line-height: 18px;
 
 export const NameTD = styled.td`
 text-align: ${(props) => props.align};
-color: white;
+color: ${props => props.theme.basicText};
 font-weight: 400;
 font-size: 14px;
 line-height: 18px;
