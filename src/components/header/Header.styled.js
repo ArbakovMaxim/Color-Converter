@@ -48,6 +48,9 @@ height: 90px;
 border-radius: 20px;
 background: ${(props) => props.color};
 margin-top: 16px;
+@media (max-width: 700px) {
+ margin-left: 5px;
+  }
 `
 
 export const BtnNight = styled.div`

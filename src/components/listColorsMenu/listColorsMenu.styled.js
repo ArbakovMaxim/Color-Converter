@@ -14,7 +14,12 @@ width: 435px;
 &:not(:last-child) {
     gap-right:46px;;
   }
-
+  @media (max-width: 500px) {
+  width: 320px;
+  padding-top:21px;
+  padding-left:10px;
+  padding-right:10px;
+ }
 `
 
 export const ItemtColorMenu = styled.li`

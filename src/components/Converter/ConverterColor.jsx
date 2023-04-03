@@ -32,7 +32,7 @@ import { ActivInputNameOrHEX } from 'util/ActivElement/activInputNameOrHEX';
 import { activSetInputNameOrHEX } from 'util/ActivElement/ActivSetInputNameOrHEX';
 import useTheme from '../../style/useTheme';
 
-const ConverterColor = ({ color, bgColor, saturation }) => {
+const ConverterColor = ({ color, bgColor, saturation, setErrorMassege }) => {
   //////input set
   const [colorInput, setColorInput] = useState('');
   const [colorInputSecond, setColorInputSecond] = useState('');
@@ -199,7 +199,6 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
       activSetNameOrHEX(colorConverter);
       return;
     }
-    console.log(colorConverter);
     const result = Object.values({ colorConverter }).map(i =>
       Object.values(i)
     )[0];
@@ -223,7 +222,8 @@ const ConverterColor = ({ color, bgColor, saturation }) => {
         activFlower,
         activInputRights,
         colorInputValue,
-        color
+        color,
+        setErrorMassege
       );
 
       const bg = color.getRGB();

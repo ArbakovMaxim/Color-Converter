@@ -46,7 +46,6 @@ export function saturationToInput(color, saturation, flowerSystem) {
     }
     if (flowerSystem === 'LCH') {
         result = color.getLCH()
-        console.log(color.getLCH())
         return result
     }
 

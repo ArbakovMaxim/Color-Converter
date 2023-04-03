@@ -1,68 +1,173 @@
-export function getColor(color, options) {
+export function getColor(color, options, setErrorMassege) {
     let result = {};
     switch (options) {
         case 'RGB':
-            result = color.getRGB()
+            try {
+                result = color.getRGB()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'RGBA':
-            result = color.getRGBA()
+            try {
+                result = color.getRGBA()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HEX':
-            result = color.getHEX()
+            try {
+                result = color.getHEX()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'CMYK':
-            result = color.getCMYK()
+            try {
+                result = color.getCMYK()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'Name':
-            result = color.getName()
+            try {
+                result = color.getName()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSL':
-            result = color.getHSL()
+            try {
+                result = color.getHSL()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSLA':
-            result = color.getHSLA()
+            try {
+                result = color.getHSLA()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSIA':
-            result = color.getHSIA()
+            try {
+                result = color.getHSIA()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HLSA':
-            result = color.getHLSA()
+            try {
+                result = color.getHLSA()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSI':
-            result = color.getHSI()
+            try {
+                result = color.getHSI()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HLS':
-            result = color.getHLS()
+            try {
+                result = color.getHLS()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSV':
-            result = color.getHSV()
+            try {
+                result = color.getHSV()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HSB':
-            result = color.getHSB()
+            try {
+                result = color.getHSB()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'Safe':
-            result = color.getSafe()
+            try {
+                result = color.getSafe()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'CMY':
-            result = color.getCMY()
+            try {
+                result = color.getCMY()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'XYZ':
-            result = color.getXYZ()
+            try {
+                result = color.getXYZ()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'Yxy':
-            result = color.getYxy()
+            try {
+                result = color.getYxy()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'Lab':
-            result = color.getLab()
+            try {
+                result = color.getLab()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'LCH':
-            result = color.getLCH()
+            try {
+                result = color.getLCH()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'HunterLab':
-            result = color.getHunterLab()
+            try {
+                result = color.getHunterLab()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         case 'Luv':
-            result = color.getLuv()
+            try {
+                result = color.getLuv()
+            } catch (error) {
+                setErrorMassege(`${error}`)
+                result = ""
+            }
             break;
         default:
             result = '';

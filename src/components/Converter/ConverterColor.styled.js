@@ -2,18 +2,23 @@ import styled from "styled-components";
 
 export const WrraperConverter = styled.div`
 display: flex;
-@media (max-width: 500px) {
-   display: block;
+@media (max-width: 1419px) {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   }
 `
 
 export const WrraperListColum = styled.div`
 height: 245px;
-width: 435px;
+width: 437px;
 max-width:100%;
 background-color: #D9D9D9;
 position: absolute;
-z-index: 2
+z-index: 2;
+@media (max-width: 500px) {
+  width: 332px;
+ }
 `
 
 export const BtnPicker = styled.button`
@@ -67,6 +72,9 @@ display:block;
 width: 388px;
 max-width:100%;
 height: 45px;
+@media (max-width: 500px) {
+  width:290px;
+  }
   `
 
 export const WrraperArrows = styled.div`
@@ -86,13 +94,17 @@ color:${props => props.theme.basicText};
 export const WrraperInput = styled.div`
 max-width:100%;
 display: flex;
+
 `
 
 export const WrraperRightsBtnGroup = styled.div`
 max-width:100%;
 margin-left:20px;
 @media (max-width: 500px) {
-  margin-left:0;}`
+  margin-left:0;}
+  @media (max-width: 1419px) {
+    margin-left:0;
+  }`
 
 export const WrraperCopy = styled.div`
 margin-left:10px;

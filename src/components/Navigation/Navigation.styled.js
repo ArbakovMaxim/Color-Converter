@@ -26,4 +26,8 @@ display: flex
 export const NavigationContainer = styled.div`
 display: flex;
 align-items:flex-end;
+
+@media (max-width: 700px) {
+ display: none;
+  }
 `

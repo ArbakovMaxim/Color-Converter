@@ -462,8 +462,6 @@ export default class Converter {
     //  */
 
     static HSVToRGB(hue, saturation, value) {
-        // saturation = saturation / 100
-        // value = value / 100
         let red = Number;
         let green = Number;
         let blue = Number;
@@ -537,8 +535,8 @@ export default class Converter {
         saturation = saturation.toFixed(11);
         const hsv = {}
         hsv.hue = circle.hue;
-        hsv.saturation = saturation
-        hsv.value = value
+        hsv.saturation = saturation;
+        hsv.value = value;
 
         return hsv
     }
@@ -670,7 +668,6 @@ export default class Converter {
         X = Number(X) / 100;
         Y = Number(Y) / 100;
         Z = Number(Z) / 100;
-        console.log(X, Y, Z);
         let red = X * 3.2406 + Y * -1.5372 + Z * -0.4986;
         let green = X * -0.9689 + Y * 1.8758 + Z * 0.0415;
         let blue = X * 0.0557 + Y * -0.2040 + Z * 1.0570;
@@ -678,7 +675,6 @@ export default class Converter {
         red = this._prepareColorForXYZToRGBOutput(red);
         green = this._prepareColorForXYZToRGBOutput(green);
         blue = this._prepareColorForXYZToRGBOutput(blue);
-        console.log(red, green, blue);
 
         return this._roundRGB(red, green, blue);
     }
@@ -692,7 +688,6 @@ export default class Converter {
 
 
     static RGBToYxy(red, green, blue) {
-        console.log(this.RGBToXYZ(red, green, blue))
         const XYZ = this.RGBToXYZ(red, green, blue);
         const X = Number(XYZ.X);
         const Y = Number(XYZ.Y);
@@ -756,9 +751,9 @@ export default class Converter {
         const b = 200 * (Y - Z);
 
         const lab = {};
-        lab.L = L;
-        lab.a = a;
-        lab.b = b;
+        lab.L = L.toFixed(2);
+        lab.a = a.toFixed(2);
+        lab.b = b.toFixed(2);
 
         return lab;
     }
@@ -805,18 +800,41 @@ export default class Converter {
     //  */
 
     static RGBToLCH(red, green, blue) {
-        let { L, a, b } = this.RGBToLab(red, green, blue);
-        let H = Math.atan2(b, a);
-        H = H > 0 ? (H / Math.PI) * 180 : 360 - (Math.abs(H) / Math.PI) * 180;
+        // let { L, a, b } = this.RGBToLab(red, green, blue);
+        // let H = Math.atan2(b, a);
+        // H = H > 0 ? (H / Math.PI) * 180 : 360 - (Math.abs(H) / Math.PI) * 180;
 
-        L = L.toFixed(4);
-        const C = (Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)))).toFixed(4);
-        H = Math.floor(H % 360);
-        const lch = {};
-        lch.L = Number(L);
-        lch.C = Number(C);
-        lch.H = H;
+        // L = Number(L);
+        // const C = (Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)))).toFixed(4);
+        // H = Math.floor(H % 360);
+        // const lch = {};
+        // lch.L = Number(L);
+        // lch.C = Number(C);
+        // lch.H = H;
 
+        // return lch;
+        red = Number(red / 255);
+        green = Number(green / 255);
+        blue = Number(blue / 255);
+
+        // Вычислите значения XYZ
+        const x = 0.412453 * red + 0.357580 * green + 0.180423 * blue;
+        const y = 0.212671 * red + 0.715160 * green + 0.072169 * blue;
+        const z = 0.019334 * red + 0.119193 * green + 0.950227 * blue;
+
+        // Вычислите значения L, a, b
+        const l = (116 * y) - 16;
+        const a = 500 * (x - y);
+        const b = 200 * (y - z);
+
+        // Вычислите значения C, H
+        const c = Math.sqrt(a * a + b * b);
+        const h = (Math.atan2(b, a) * 180) / Math.PI;
+
+        const lch = {}
+        lch.L = l;
+        lch.C = c;
+        lch.H = h;
         return lch;
     }
 
@@ -863,9 +881,9 @@ export default class Converter {
         const Hunter_b = Kb * (((Y / refY) - (Z / refZ)) / Math.sqrt(Y / refY));
 
         const hunterLab = {};
-        hunterLab.Hunter_L = Hunter_L;
-        hunterLab.Hunter_a = Hunter_a;
-        hunterLab.Hunter_b = Hunter_b;
+        hunterLab.Hunter_L = Hunter_L.toFixed(2);
+        hunterLab.Hunter_a = Hunter_a.toFixed(2);
+        hunterLab.Hunter_b = Hunter_b.toFixed(2);
 
         return hunterLab;
     }
@@ -919,6 +937,9 @@ export default class Converter {
         refZ = 108.883
     ) {
         let { X, Y, Z } = this.RGBToXYZ(red, green, blue);
+        X = Number(X);
+        Y = Number(Y);
+        Y = Number(Z);
 
         const U = (4 * X) / (X + (15 * Y) + (3 * Z));
         const V = (9 * Y) / (X + (15 * Y) + (3 * Z));
@@ -933,9 +954,9 @@ export default class Converter {
         const v = 13 * L * (V - refV);
 
         const luv = {};
-        luv.L = L;
-        luv.u = u;
-        luv.v = v;
+        luv.L = L.toFixed(2);
+        luv.u = u.toFixed(2);
+        luv.v = v.toFixed(2);
 
         return luv;
     }
@@ -959,6 +980,9 @@ export default class Converter {
         refY = 100,
         refZ = 108.883
     ) {
+        L = Number(L);
+        u = Number(u);
+        v = Number(v);
         let Y = (L + 16) / 116;
         Y = Math.pow(Y, 3) > 0.008856 ? Math.pow(Y, 3) : ((Y - 16 / 116) / 7.787);
 
@@ -971,7 +995,6 @@ export default class Converter {
         Y *= 100;
         const X = - (9 * Y * U) / ((U - 4) * V - U * V);
         const Z = (9 * Y - (15 * V * Y) - (V * X)) / (3 * V);
-
         return this.XYZToRGB(X, Y, Z);
     }
 

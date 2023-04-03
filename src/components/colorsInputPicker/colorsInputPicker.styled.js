@@ -30,6 +30,10 @@ padding-left:10px;
 width:45px;
 max-width:100%;
 height:45px;
+@media (max-width: 500px) {
+  width:25px;
+  padding-left:3px;
+  }
 `
 
 export const LastInput = styled.input`
@@ -49,7 +53,10 @@ background-color:${props => props.theme.backgroundBasic};
 padding-left:10px;
 width:363px;
 max-width:100%;
-height:45px;`
+height:45px;
+@media (max-width: 500px) {
+  width:263px;
+  }`
 
 export const Tekst = styled.p`
 color: ${props => props.theme.secondText};
